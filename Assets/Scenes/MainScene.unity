@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 252568042}
   m_Layer: 0
   m_Name: Pie1
-  m_TagString: Untagged
+  m_TagString: BakedGood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1114,7 +1114,7 @@ GameObject:
   - component: {fileID: 1977712970}
   m_Layer: 0
   m_Name: Ant
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
