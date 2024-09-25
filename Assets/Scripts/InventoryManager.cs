@@ -1,18 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject swatterPrefab;
+
+
+    [Header("Variables")]
+    public bool swatterSelected = false;
+
+
+    public void OnMouseDown()
     {
-        
+        if (!swatterSelected)
+        {
+            ActivateSwatter();
+        }
+        else if (swatterSelected)
+        {
+            DeactivatSwatter();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void ActivateSwatter()
     {
-        
+        swatterSelected = true;
+        GameObject.Instantiate(swatterPrefab);
     }
+
+    void DeactivatSwatter()
+    {
+        swatterSelected = false;
+        //destroy clone of swatterPrefab
+    }
+
+
 }
