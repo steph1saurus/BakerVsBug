@@ -1,25 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemyPrefab;
-    //public GameObject[] inventoryPrefab;
 
+    [Header ("Public variables")]
     public int enemyCount;
     public int waveNumber = 1;
-    public int maxAnts = 3;
+    public int maxAnts = 6;
 
+
+    [Header ("Private variables")]
     //fixed spawn position for ants
     private Vector3 spawnPosition = new Vector3(-10, -1, 0);
+
+    [Header ("Flags")]
+    private bool isSpawning =false;
 
     // Update is called once per frame
     void Update()
     {
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-        if (enemyCount < maxAnts)
+        if (enemyCount < maxAnts && !isSpawning)
         {
             //fix this. this causes start coroutine to happen continuously
             StartCoroutine(SpawnEnemy());
@@ -29,8 +34,10 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
+        isSpawning = true;
         yield return new WaitForSeconds(2f);
         Instantiate(enemyPrefab[0], spawnPosition, Quaternion.identity);
+        isSpawning = false;
     }
 
 
