@@ -20,11 +20,13 @@ public class MovePie : MonoBehaviour
 
     private void OnMouseDown()
     {
+
         if (moving == false)
         {
+            moving = true;
             //record the difference between the centers of the pie and the clicked point on the camera plane
             offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            moving = true;
+           
 
         }
 

@@ -54,7 +54,7 @@ public class SpawnManager : MonoBehaviour
             }
             else
             {
-            int enemyIndex = Random.Range(0, 1);
+            int enemyIndex = Random.Range(0, 2);
 
             for (int i = 0; i < enemiesToSpawn; i++)
             {
