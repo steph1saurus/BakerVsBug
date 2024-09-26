@@ -7,7 +7,6 @@ public class MoveSwatter : MonoBehaviour
     private Vector3 offset;
     private Collider2D swatterCollider;
 
-
     private void Start()
     {
         swatterCollider = gameObject.GetComponent<Collider2D>();
@@ -40,13 +39,20 @@ public class MoveSwatter : MonoBehaviour
             // Check if the enemy's collider is within the swatter's collider bounds
             Collider2D enemyCollider = enemy.GetComponent<Collider2D>();
 
-            if (enemyCollider != null && swatterCollider.bounds.Intersects(enemyCollider.bounds))
+            if (enemyCollider != null && swatterCollider != null)
             {
-                // Reduce the enemy's life points
-                EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
-                if (enemyHealth != null)
+                // Check if the colliders intersect (touch) or the swatter completely contains the enemy's bounds
+                bool isTouching = swatterCollider.bounds.Intersects(enemyCollider.bounds);
+                bool isCompletelyOverlapping = swatterCollider.bounds.Contains(enemyCollider.bounds.min) && swatterCollider.bounds.Contains(enemyCollider.bounds.max);
+
+                if (isTouching || isCompletelyOverlapping)
                 {
-                    enemyHealth.ReduceLife(1); // Assuming ReduceLife(int) method reduces life points
+                    // Reduce the enemy's life points
+                    EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+                    if (enemyHealth != null)
+                    {
+                        enemyHealth.ReduceLife(1); // Assuming ReduceLife(int) method reduces life points
+                    }
                 }
             }
         }

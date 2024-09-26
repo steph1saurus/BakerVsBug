@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnEnemy()
     {
         isSpawning = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         Instantiate(enemyPrefab[0], spawnPosition, Quaternion.identity);
         isSpawning = false;
     }
