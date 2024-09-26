@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject swatterPrefab;
+    public GameObject swatterPrefab; //reference to the prefab asset
+    private GameObject instantiatedSwatter; //reference to the instantiated swatter
 
 
     [Header("Variables")]
@@ -26,13 +27,17 @@ public class InventoryManager : MonoBehaviour
     void ActivateSwatter()
     {
         swatterSelected = true;
-        GameObject.Instantiate(swatterPrefab);
+        instantiatedSwatter = GameObject.Instantiate(swatterPrefab);
     }
 
     void DeactivatSwatter()
     {
         swatterSelected = false;
-        //destroy clone of swatterPrefab
+
+        if (instantiatedSwatter != null)
+        {
+            Destroy(instantiatedSwatter);
+        }
     }
 
 
