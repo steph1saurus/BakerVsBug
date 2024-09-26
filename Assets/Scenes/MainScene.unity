@@ -923,8 +923,7 @@ MonoBehaviour:
   - {fileID: 3243456959496637315, guid: c10391ee1394549ecb844c39d9d0aabd, type: 3}
   enemyCount: 0
   waveNumber: 0
-  maxAnts: 6
-  maxBigAnts: 3
+  maxEnemies: 20
   backgroundCollider: {fileID: 7101247}
 --- !u!1 &1025634185
 GameObject:

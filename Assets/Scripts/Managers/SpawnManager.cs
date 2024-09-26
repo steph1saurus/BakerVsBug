@@ -1,4 +1,4 @@
-using System.Collections;
+
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -8,8 +8,8 @@ public class SpawnManager : MonoBehaviour
     [Header("Spawn wave")]
     public int enemyCount;
     public int waveNumber = 1;
-    public int maxAnts = 10;
-    public int maxBigAnts = 8;
+    public int maxEnemies = 20;
+
 
    
 
@@ -28,9 +28,13 @@ public class SpawnManager : MonoBehaviour
         enemyCount = FindObjectsOfType<EnemyHealth>().Length; //length will return the number of enemies in the scene
         if (enemyCount == 0)
         {
+            if (waveNumber <= maxEnemies)
+            {
+                waveNumber++;
+                SpawnEnemyWave(waveNumber);
 
-            SpawnEnemyWave(waveNumber);
-            waveNumber++;
+            }
+
         }
       
 
@@ -39,33 +43,28 @@ public class SpawnManager : MonoBehaviour
     // Spawn a wave of enemies based on the wave number
     void SpawnEnemyWave(int enemiesToSpawn)
     {
+            if (waveNumber <8)
+            {
+                // Spawn only ants for wave 1
+                for (int i = 0; i < enemiesToSpawn; i++)
+                {
+                    Vector3 spawnPosition = GetRandomPositionOutsideBounds();
+                    Instantiate(enemyPrefab[0], spawnPosition, Quaternion.identity); // Ant prefab
+                }
+            }
+            else
+            {
+            int enemyIndex = Random.Range(0, 1);
 
-        if (waveNumber == 1)
-        {
-            // Spawn only ants for wave 1
-            for (int i = 0; i < maxAnts; i++)
+            for (int i = 0; i < enemiesToSpawn; i++)
             {
                 Vector3 spawnPosition = GetRandomPositionOutsideBounds();
-                Instantiate(enemyPrefab[0], spawnPosition, Quaternion.identity); // Ant prefab
+                Instantiate(enemyPrefab[enemyIndex], spawnPosition, Quaternion.identity); // Ant prefab
             }
         }
 
-        else if (waveNumber >=8)
-        {
-            // Spawn ants and big ants for wave 2 and onwards
-            for (int i = 0; i < maxAnts; i++)
-            {
-                Vector3 spawnPosition = GetRandomPositionOutsideBounds();
-                Instantiate(enemyPrefab[0], spawnPosition, Quaternion.identity); // Ant prefab
-            }
+          
 
-            for (int i = 0; i < maxBigAnts; i++)
-            {
-                Vector3 spawnPosition = GetRandomPositionOutsideBounds();
-                Instantiate(enemyPrefab[1], spawnPosition, Quaternion.identity); // BigAnt prefab
-            }
-        }
-       
     }
 
   
