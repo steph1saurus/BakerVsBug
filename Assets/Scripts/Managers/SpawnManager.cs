@@ -1,15 +1,18 @@
-
+using System.Collections;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [Header("Game objects")]
     public GameObject[] enemyPrefab; // Assuming enemyPrefab[0] is Ant and enemyPrefab[1] is BigAnt
+    public GameObject enemyWarningText;
 
     [Header("Spawn wave")]
     public int enemyCount;
     public int waveNumber = 1;
     public int maxEnemies = 20;
 
+   
 
    
 
@@ -20,6 +23,7 @@ public class SpawnManager : MonoBehaviour
     private void Start()
     {
         SpawnEnemyWave(waveNumber);
+        StartCoroutine(EnemyWarning());
     }
 
     void Update()
@@ -37,6 +41,14 @@ public class SpawnManager : MonoBehaviour
 
         }
       
+
+    }
+
+    private IEnumerator EnemyWarning()
+    {
+        enemyWarningText.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        enemyWarningText.SetActive(false);
 
     }
 
@@ -66,8 +78,6 @@ public class SpawnManager : MonoBehaviour
           
 
     }
-
-  
 
     // Get a random position outside the edges of the background collider
     Vector3 GetRandomPositionOutsideBounds()
@@ -104,4 +114,6 @@ public class SpawnManager : MonoBehaviour
 
         return new Vector3(randomX, randomY, 0f); // Assuming a 2D game (z = 0)
     }
+
+    
 }
