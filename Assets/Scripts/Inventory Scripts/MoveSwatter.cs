@@ -7,6 +7,8 @@ public class MoveSwatter : MonoBehaviour
     private Vector3 offset;
     private Collider2D swatterCollider;
 
+
+
     private void Start()
     {
         swatterCollider = gameObject.GetComponent<Collider2D>();
@@ -14,8 +16,8 @@ public class MoveSwatter : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer !=null)
         {
-            spriteRenderer.sortingLayerName = "Foreground";
-            spriteRenderer.sortingOrder = 10;
+            spriteRenderer.sortingLayerName = "Default";
+            spriteRenderer.sortingOrder = 2;
         }
 
     }
@@ -33,6 +35,8 @@ public class MoveSwatter : MonoBehaviour
     {
         // Find all objects with the "Enemy" tag
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         foreach (GameObject enemy in enemies)
         {
@@ -55,6 +59,10 @@ public class MoveSwatter : MonoBehaviour
                     }
                 }
             }
+
+
         }
+       
+       
     }
 }

@@ -6,31 +6,50 @@ public class MovePie : MonoBehaviour
     public bool moving = false;
     private Vector3 offset;
 
-    
+    private InventoryManager inventoryManager;
+ 
 
+
+    private void Start()
+    {
+
+        inventoryManager = FindObjectOfType<InventoryManager>();
+    }
     // Update is called once per frame
     void Update()
     {
-        if (moving)
+        // Check if an inventory item is selected before moving the pie
+        if (!inventoryManager.isInventoryItemSelected && moving)
         {
-            //move the pie, taking into account the original offset
-            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+            // Move the pie, taking into account the original offset
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0; // Set z to 0 to avoid depth issues
+            transform.position = mousePosition + offset;
         }
+
+        //if (moving)
+        //{
+        //    //move the pie, taking into account the original offset
+        //    transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+        //}
     }
 
     private void OnMouseDown()
     {
 
-        if (moving == false)
+        if (!inventoryManager.isInventoryItemSelected)
         {
-            moving = true;
-            //record the difference between the centers of the pie and the clicked point on the camera plane
-            offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-           
-
+            // Toggle the moving state
+            moving = !moving;
         }
+        //if (moving == false)
+        //{
+        //    moving = true;
+        //    //record the difference between the centers of the pie and the clicked point on the camera plane
+        //    offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        //}
 
-        else moving = false;
+        //else moving = false;
     }
 }

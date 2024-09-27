@@ -14,18 +14,15 @@ public class InventoryManager : MonoBehaviour
 
 
     [Header("Variables")]
-    public bool swatterSelected = false;
-
-
-    
+    public bool isInventoryItemSelected = false;
 
     public void OnMouseDown()
     {
-        if (!swatterSelected)
+        if (!isInventoryItemSelected)
         {
             ActivateSwatter();
         }
-        else if (swatterSelected)
+        else if (isInventoryItemSelected)
         {
             DeactivatSwatter();
         }
@@ -34,13 +31,13 @@ public class InventoryManager : MonoBehaviour
 
     void ActivateSwatter()
     {
-        swatterSelected = true;
+        isInventoryItemSelected = true;
         instantiatedSwatter = GameObject.Instantiate(swatterPrefab);
     }
 
     void DeactivatSwatter()
     {
-        swatterSelected = false;
+        isInventoryItemSelected = false;
 
         if (instantiatedSwatter != null)
         {
