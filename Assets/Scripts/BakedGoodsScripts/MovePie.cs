@@ -12,7 +12,12 @@ public class MovePie : MonoBehaviour
 
     private void Start()
     {
-
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sortingLayerName = "Default";
+            spriteRenderer.sortingOrder = 2;
+        }
         inventoryManager = FindObjectOfType<InventoryManager>();
     }
     // Update is called once per frame
