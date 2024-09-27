@@ -10,10 +10,10 @@ public class SpawnManager : MonoBehaviour
     [Header("Spawn wave")]
     public int enemyCount;
     public int waveNumber = 1;
-    public int maxEnemies = 20;
+    public int maxEnemies;
 
-   
-
+    [Header ("Level number")]
+    public int levelNum; //index of which level is currently open
    
 
     [Header("Spawn area")]
@@ -22,23 +22,31 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnEnemyWave(waveNumber);
+        //SpawnEnemyWave(waveNumber);
+        SpawnRandomEnemies();
         StartCoroutine(EnemyWarning());
     }
 
     void Update()
     {
-       
-        enemyCount = FindObjectsOfType<EnemyHealth>().Length; //length will return the number of enemies in the scene
+
+        //enemyCount = FindObjectsOfType<EnemyHealth>().Length; //length will return the number of enemies in the scene
+        //if (enemyCount == 0)
+        //{
+        //    if (waveNumber <= maxEnemies)
+        //    {
+        //        waveNumber++;
+        //        SpawnEnemyWave(waveNumber);
+
+        //    }
+
+        //}
+
+        //spawn more enemies if all are defeated
+        enemyCount = FindObjectsOfType <EnemyHealth>().Length;
         if (enemyCount == 0)
         {
-            if (waveNumber <= maxEnemies)
-            {
-                waveNumber++;
-                SpawnEnemyWave(waveNumber);
-
-            }
-
+            SpawnRandomEnemies();
         }
       
 
@@ -52,32 +60,62 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    // Spawn a wave of enemies based on the wave number
-    void SpawnEnemyWave(int enemiesToSpawn)
+    private IEnumerator WaitToSpawn()
     {
-            if (waveNumber <8)
-            {
-                // Spawn only ants for wave 1
-                for (int i = 0; i < enemiesToSpawn; i++)
-                {
-                    Vector3 spawnPosition = GetRandomPositionOutsideBounds();
-                    Instantiate(enemyPrefab[0], spawnPosition, Quaternion.identity); // Ant prefab
-                }
-            }
-            else
-            {
-            int enemyIndex = Random.Range(0, 2);
-
-            for (int i = 0; i < enemiesToSpawn; i++)
-            {
-                Vector3 spawnPosition = GetRandomPositionOutsideBounds();
-                Instantiate(enemyPrefab[enemyIndex], spawnPosition, Quaternion.identity); // Ant prefab
-            }
-        }
-
-          
-
+        yield return new WaitForSeconds(4);
     }
+
+    private void EnemiesToSpawn()
+    {
+        switch (levelNum)
+        {
+            case 1:
+                maxEnemies = 5;
+                break;
+            case 2:
+                maxEnemies = 9;
+                break;
+            case 3:
+                maxEnemies = 12;
+                break;
+        }
+    }
+
+    private void SpawnRandomEnemies()
+    {
+        EnemiesToSpawn();
+        for (int i = 0; i <maxEnemies; i++)
+        {
+            Vector3 spawnPosition = GetRandomPositionOutsideBounds();
+            Instantiate(enemyPrefab[UnityEngine.Random.Range(0, enemyPrefab.Length - 1)], spawnPosition, Quaternion.identity);
+        }
+    }
+
+        
+    //// Spawn a wave of enemies based on the wave number
+    //void SpawnEnemyWave(int enemiesToSpawn)
+    //{
+    //        if (waveNumber <8)
+    //        {
+    //            // Spawn only ants for wave 1
+    //            for (int i = 0; i < enemiesToSpawn; i++)
+    //            {
+    //                Vector3 spawnPosition = GetRandomPositionOutsideBounds();
+    //                Instantiate(enemyPrefab[0], spawnPosition, Quaternion.identity); // Ant prefab
+    //            }
+    //        }
+    //        else
+    //        {
+    //        int enemyIndex = Random.Range(0, 2);
+
+    //        for (int i = 0; i < enemiesToSpawn; i++)
+    //        {
+    //            Vector3 spawnPosition = GetRandomPositionOutsideBounds();
+    //            Instantiate(enemyPrefab[enemyIndex], spawnPosition, Quaternion.identity); // Ant prefab
+    //        }
+    //    }
+
+    //}
 
     // Get a random position outside the edges of the background collider
     Vector3 GetRandomPositionOutsideBounds()
