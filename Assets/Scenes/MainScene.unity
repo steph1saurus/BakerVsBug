@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swatterPrefab: {fileID: 7224057021289408969, guid: 3b48198061aca45a9b16f6863d8bc215, type: 3}
   inventoryPanel: {fileID: 1848015263}
-  swatterSelected: 0
+  isInventoryItemSelected: 0
 --- !u!1 &1327814343
 GameObject:
   m_ObjectHideFlags: 0
