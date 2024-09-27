@@ -47,7 +47,11 @@ public class MovePie : MonoBehaviour
             // Toggle the moving state
             moving = !moving;
         }
-        //if (moving == false)
+        else if (!inventoryManager.isInventoryItemSelected && !moving)
+        {
+            moving = true;
+        }
+       
         //{
         //    moving = true;
         //    //record the difference between the centers of the pie and the clicked point on the camera plane
