@@ -6,7 +6,7 @@ public class MoveSwatter : MonoBehaviour
 
     private Vector3 offset;
     private Collider2D swatterCollider;
-
+    private MovePie movePie;
 
 
     private void Start()
@@ -20,11 +20,15 @@ public class MoveSwatter : MonoBehaviour
             spriteRenderer.sortingOrder = 3;
         }
 
+        movePie = FindObjectOfType<MovePie>();
+
     }
 
 
     void Update()
     {
+
+
         // Move the swatter with the mouse position
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0; // Set z to 0 to avoid depth issues
