@@ -60,33 +60,6 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    //private void EnemiesToSpawn()
-    //{
-    //    switch (levelNum)
-    //    {
-    //        case 1:
-    //            maxEnemies = 5;
-    //            break;
-    //        case 2:
-    //            maxEnemies = 9;
-    //            break;
-    //        case 3:
-    //            maxEnemies = 12;
-    //            break;
-    //    }
-    //}
-
-    //private void SpawnRandomEnemies()
-    //{
-    //    EnemiesToSpawn();
-    //    for (int i = 0; i <maxEnemies; i++)
-    //    {
-    //        Vector3 spawnPosition = GetRandomPositionOutsideBounds();
-    //        Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], spawnPosition, Quaternion.identity);
-    //    }
-    //}
-
-
     // Spawn a wave of enemies based on the wave number
     void SpawnEnemyWave(int enemiesToSpawn)
     {

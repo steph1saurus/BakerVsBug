@@ -8,7 +8,8 @@ public class BakedGoodHealth : MonoBehaviour
     public float lifePoints = 20f;
 
     [SerializeField] FloatingHealthBar healthBar;
-   
+ 
+
 
     private bool isTakingDamage = false; // To track if the damage coroutine is running
 
@@ -67,7 +68,7 @@ public class BakedGoodHealth : MonoBehaviour
         lifePoints -= 0.5f;
         healthBar.UpdateHealthBar(lifePoints);
 
-        //destroy enemy when lifepoints = 0
+        //destroy baked good when lifepoints = 0
         if (lifePoints <= 0)
         {
             Destroy(gameObject);

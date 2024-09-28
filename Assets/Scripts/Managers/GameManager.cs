@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Game objects")]
     public Slider progressBar;
     public GameObject completionText;
+    public GameObject gameOverScreen;
 
     [Header ("Variables")]
   
@@ -22,6 +23,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         LevelComplete();
+
+        GameObject[] bakedGoods = GameObject.FindGameObjectsWithTag("BakedGood");
+
+        if (bakedGoods.Length ==0)
+        {
+            GameOver();
+        }
+
     }
 
 
@@ -46,6 +55,22 @@ public class GameManager : MonoBehaviour
 
         // Load the reward scene (with build index 1)
         SceneManager.LoadScene(1);  // Build index 1 is the Reward scene
+    }
+
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+    }
+
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }
