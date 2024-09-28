@@ -87,7 +87,7 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i <maxEnemies; i++)
         {
             Vector3 spawnPosition = GetRandomPositionOutsideBounds();
-            Instantiate(enemyPrefab[UnityEngine.Random.Range(0, enemyPrefab.Length - 1)], spawnPosition, Quaternion.identity);
+            Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], spawnPosition, Quaternion.identity);
         }
     }
 

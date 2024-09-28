@@ -999,6 +999,7 @@ MonoBehaviour:
   enemyCount: 0
   waveNumber: 0
   maxEnemies: 20
+  levelNum: 1
   backgroundCollider: {fileID: 1990039436}
 --- !u!1 &1025634185
 GameObject:
@@ -2043,7 +2044,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.87
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
