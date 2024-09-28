@@ -1089,7 +1089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &898176597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1238,7 +1238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 4991633932184505552, guid: f2a2fe1e54abd4beba111d3b5750f9d3, type: 3}
-  - {fileID: 3243456959496637315, guid: c10391ee1394549ecb844c39d9d0aabd, type: 3}
   enemyWarningText: {fileID: 889073950}
   enemyCount: 0
   waveNumber: 0
@@ -1600,6 +1599,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swatterPrefab: {fileID: 7224057021289408969, guid: 3b48198061aca45a9b16f6863d8bc215, type: 3}
   swatterButton: {fileID: 711028549}
+  stickyPrefab: {fileID: 1485387320352537647, guid: ffb9ee12048cb4fb49dd0f451f281986, type: 3}
+  stickyButton: {fileID: 898176598}
   isInventoryItemSelected: 0
   speedReductionFactor: 0.5
   effectDuration: 5
