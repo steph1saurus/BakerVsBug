@@ -53,8 +53,12 @@ public class GameManager : MonoBehaviour
         // Wait for 3 seconds
         yield return new WaitForSecondsRealtime(3f);  // Realtime because Time.timeScale is set to 0
 
-        // Load the reward scene (with build index 1)
-        SceneManager.LoadScene(1);  // Build index 1 is the Reward scene
+        LoadScene("RewardScene");
+    }
+
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 
     public void GameOver()
