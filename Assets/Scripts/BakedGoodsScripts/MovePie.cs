@@ -1,64 +1,38 @@
-
 using UnityEngine;
 
 public class MovePie : MonoBehaviour
 {
-    public bool moving = false;
     private Vector3 offset;
+    private Camera mainCamera;
+    public float bakedGoodZPosition = -1f;  // Ensure BakedGood is rendered in front of enemies
 
-    private InventoryManager inventoryManager;
- 
-
-
-    private void Start()
+    void Start()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.sortingLayerName = "Default";
-            spriteRenderer.sortingOrder = 2;
-        }
-        inventoryManager = FindObjectOfType<InventoryManager>();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        // Check if an inventory item is selected before moving the pie
-        if (!inventoryManager.isInventoryItemSelected && moving)
-        {
-            // Move the pie, taking into account the original offset
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0; // Set z to 0 to avoid depth issues
-            transform.position = mousePosition + offset;
-        }
+        mainCamera = Camera.main;
 
-        //if (moving)
-        //{
-        //    //move the pie, taking into account the original offset
-        //    transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-        //}
+        // Set the z-position of the BakedGood object to ensure it's rendered in front
+        Vector3 initialPosition = transform.position;
+        initialPosition.z = bakedGoodZPosition;
+        transform.position = initialPosition;
+
     }
 
-    private void OnMouseDown()
+    void OnMouseDown()
     {
+     
 
-        if (!inventoryManager.isInventoryItemSelected)
-        {
-            // Toggle the moving state
-            moving = !moving;
-        }
-        else if (!inventoryManager.isInventoryItemSelected && !moving)
-        {
-            moving = true;
-        }
-       
-        //{
-        //    moving = true;
-        //    //record the difference between the centers of the pie and the clicked point on the camera plane
-        //    offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // Get the current mouse position and calculate the offset
+        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        offset = transform.position - new Vector3(mousePosition.x, mousePosition.y, bakedGoodZPosition);
+    }
 
-        //}
+    void OnMouseDrag()
+    {
+        // Get the current mouse position and update the object's position, maintaining the correct z-position
+        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 newPosition = new Vector3(mousePosition.x, mousePosition.y, bakedGoodZPosition) + offset;
 
-        //else moving = false;
+        // Update the object's position to follow the mouse, maintaining the z-layer priority
+        transform.position = newPosition;
     }
 }

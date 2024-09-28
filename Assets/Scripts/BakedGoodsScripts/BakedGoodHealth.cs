@@ -5,7 +5,7 @@ using System.Collections;
 public class BakedGoodHealth : MonoBehaviour
 {
     [Header("Max health points")]
-    public int lifePoints = 20;
+    public float lifePoints = 20f;
 
     [SerializeField] FloatingHealthBar healthBar;
    
@@ -64,7 +64,7 @@ public class BakedGoodHealth : MonoBehaviour
     public void ReduceLife()
     {
 
-        lifePoints -= 1;
+        lifePoints -= 0.5f;
         healthBar.UpdateHealthBar(lifePoints);
 
         //destroy enemy when lifepoints = 0

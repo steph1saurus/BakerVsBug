@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 971148657515208859, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_Color.b
       value: 0.9056604
@@ -20,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.56817377
       objectReference: {fileID: 0}
+    - target: {fileID: 2646561791838503271, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4450250072053070511, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -27,6 +35,10 @@ PrefabInstance:
     - target: {fileID: 4450250072053070511, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770599275671896239, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5161705419046157872, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71,6 +83,18 @@ PrefabInstance:
     - target: {fileID: 6776510605812496648, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_Name
       value: Pie2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776510605812496648, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783158312999697932, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9148829264276309938, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

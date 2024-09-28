@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int lifePoints = 1;
+    public int lifePoints;
+    
 
+  
     public void ReduceLife (int amount)
     {
         lifePoints -= amount;
@@ -16,7 +18,6 @@ public class EnemyHealth : MonoBehaviour
             Debug.Log("enemy destroyed");
         }
     }
-
 
 
 }

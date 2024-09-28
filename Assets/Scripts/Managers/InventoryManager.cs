@@ -39,13 +39,13 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    void ActivateSwatter()
+    public void ActivateSwatter()
     {
         isInventoryItemSelected = true;
         instantiatedSwatter = Instantiate(swatterPrefab);
     }
 
-    void DeactivatSwatter()
+    public void DeactivatSwatter()
     {
         isInventoryItemSelected = false;
 

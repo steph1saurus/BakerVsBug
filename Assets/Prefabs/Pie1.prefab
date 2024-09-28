@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4798096222172761302}
   - component: {fileID: 7265110007225180534}
   - component: {fileID: 1959240207165932699}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 4043012161839032510}
   - component: {fileID: 405727699898787982}
   - component: {fileID: 7002816632487329308}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 779252505546909563}
   - component: {fileID: 662243396305503981}
   - component: {fileID: 4488512513059389908}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a8c1a958248f34d69a7f9e085baf1f78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f86d5ab9b860490dadc45cc1810cef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moving: 0
+  bakedGoodZPosition: -1
 --- !u!114 &7077609565852455313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4163686091483060028}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 4450250072053070511}
   - component: {fileID: 8470247832103635538}
   - component: {fileID: 492507652523969326}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

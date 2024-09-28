@@ -60,10 +60,7 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    private IEnumerator WaitToSpawn()
-    {
-        yield return new WaitForSeconds(4);
-    }
+ 
 
     private void EnemiesToSpawn()
     {
