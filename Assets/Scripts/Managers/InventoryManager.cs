@@ -1,22 +1,33 @@
-
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
     [Header ("Inventory items")]
+    
+    //Swatter items
     public GameObject swatterPrefab; //reference to the prefab asset
     private GameObject instantiatedSwatter; //reference to the instantiated swatter
-
-    [Header("Inventory UI")]
-    public GameObject inventoryPanel;
-    private bool inventoryActive= true;
+    public Button swatterButton;
 
 
     [Header("Variables")]
     public bool isInventoryItemSelected = false;
 
-    public void OnMouseDown()
+    //Sticky trap variables
+    public float speedReductionFactor = 0.5f;
+    public float effectDuration = 5f;
+
+    private void Start()
+    {
+        //swatterbutton
+        Button button = swatterButton.GetComponent<Button>();
+        button.onClick.AddListener(SwatterClicked);
+
+    }
+
+    public void SwatterClicked()
     {
         if (!isInventoryItemSelected)
         {
@@ -28,11 +39,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-
     void ActivateSwatter()
     {
         isInventoryItemSelected = true;
-        instantiatedSwatter = GameObject.Instantiate(swatterPrefab);
+        instantiatedSwatter = Instantiate(swatterPrefab);
     }
 
     void DeactivatSwatter()
@@ -42,23 +52,10 @@ public class InventoryManager : MonoBehaviour
         if (instantiatedSwatter != null)
         {
             Destroy(instantiatedSwatter);
+            instantiatedSwatter = null;
         }
     }
 
-    public void ActivateInventory()
-    {
-        if (!inventoryActive)
-        {
-            inventoryPanel.SetActive(true);
-            inventoryActive = true;
-        }
-        else
-        {
-            inventoryPanel.SetActive(false);
-            inventoryActive = false;
-        }
-    }
-       
 
-   
+    
 }

@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveSwatter : MonoBehaviour
 {
@@ -22,8 +23,8 @@ public class MoveSwatter : MonoBehaviour
 
         movePie = FindObjectOfType<MovePie>();
 
-    }
 
+    }
 
     void Update()
     {
