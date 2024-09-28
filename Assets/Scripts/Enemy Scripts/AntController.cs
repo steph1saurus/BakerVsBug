@@ -9,8 +9,7 @@ public class AntController : MonoBehaviour
     public float stoppingDistance = 0.1f; //ensures enemy stops once it's close enough to the collider of baked good
     private GameObject closestBakedGood;
 
-    //reference needed to stop ants from moving while pie is being moved
-
+    public bool touchingBakedGood = false;
 
 
    
@@ -64,8 +63,13 @@ public class AntController : MonoBehaviour
 
                 if (distanceToTarget >totalStoppingDistance)
                 {
+                    touchingBakedGood = false;
                     direction.Normalize();
                     transform.position += direction * speed * Time.deltaTime;
+                }
+                else
+                {
+                    touchingBakedGood = true;
                 }
             }
             
