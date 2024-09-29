@@ -1,16 +1,19 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
     [Header("Game objects")]
     public GameObject[] enemyPrefab; // Assuming enemyPrefab[0] is Ant and enemyPrefab[1] is BigAnt
-    public GameObject enemyWarningText;
+    public TextMeshProUGUI enemyWarningText;
 
     [Header("Spawn wave")]
     public int enemyCount;
     public int waveNumber = 1;
     public int maxEnemies;
+    
 
     [Header ("Level number")]
     public int levelNum; //index of which level is currently open
@@ -22,9 +25,10 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnEnemyWave(waveNumber);
+       
         //SpawnRandomEnemies();
         StartCoroutine(EnemyWarning());
+       
     }
 
     void Update()
@@ -36,33 +40,27 @@ public class SpawnManager : MonoBehaviour
             if (waveNumber <= maxEnemies)
             {
                 waveNumber++;
-                SpawnEnemyWave(waveNumber);
+                SpawnEnemyWave(waveNumber + 2);
 
             }
 
         }
 
-        ////spawn more enemies if all are defeated
-        //enemyCount = FindObjectsOfType <EnemyHealth>().Length;
-        //if (enemyCount == 0)
-        //{
-        //    SpawnRandomEnemies();
-        //}
-
-
     }
 
     private IEnumerator EnemyWarning()
     {
-        enemyWarningText.SetActive(true);
+        enemyWarningText.enabled = true;
         yield return new WaitForSeconds(3f);
-        enemyWarningText.SetActive(false);
+        enemyWarningText.enabled = false;
+        SpawnEnemyWave(waveNumber);
 
     }
 
     // Spawn a wave of enemies based on the wave number
     void SpawnEnemyWave(int enemiesToSpawn)
     {
+
         if (waveNumber < 8)
         {
             // Spawn only ants for wave 1
