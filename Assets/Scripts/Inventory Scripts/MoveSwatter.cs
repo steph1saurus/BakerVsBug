@@ -48,6 +48,6 @@ public class MoveSwatter : MonoBehaviour
 
     private void HandleEnemyInteraction(GameObject enemy)
     {
-        Destroy(enemy);
+        Destroy(enemy);//update this to -1 health
     }
 }
