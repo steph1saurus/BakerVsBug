@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 public class SoundMixerManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] public AudioSource clickSound;
 
 
     public void SetMainVolume(float level)
@@ -23,6 +24,4 @@ public class SoundMixerManager : MonoBehaviour
         audioMixer.SetFloat("SoundFX", Mathf.Log10(level) * 20);
 
     }
-
-
 }
