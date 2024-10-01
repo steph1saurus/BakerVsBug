@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+
 using TMPro;
 
 
@@ -9,21 +10,41 @@ public class BalanceDisplay : MonoBehaviour
 
     void Start()
     {
-        // Ensure the balance manager is initialized
-        if (PlayerBalanceManager.Instance != null)
+        try
         {
-            StartCoroutine(ShowBalance());
+            PlayerBalanceManager playerBalanceManager = FindObjectOfType<PlayerBalanceManager>();
+            // Ensure the balance manager is initialized
+            if (playerBalanceManager != null)
+            {
+                StartCoroutine(ShowBalance(playerBalanceManager));
+            }
+            else
+            {
+                throw new System.Exception("PlayerBalanceManager not found in current scene");
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("PlayerBalanceManager instance not found." + e.Message);
         }
     }
 
-    private IEnumerator ShowBalance()
-    {
-        // Wait until the balance is fetched
-        yield return PlayerBalanceManager.Instance.FetchCurrentBalance();
 
-        // Display current balance
-        Debug.Log("Current Balance: " + PlayerBalanceManager.Instance.currentBalance);
-        balanceDisplay.text = PlayerBalanceManager.Instance.currentBalance.ToString();
+    private IEnumerator ShowBalance(PlayerBalanceManager playerBalanceManager)
+    {
+        // Wait until the balance is fetched (assuming FetchCurrentBalance is a coroutine)
+        yield return playerBalanceManager.FetchCurrentBalance();
+
+        // Ensure the balance is updated and instance is valid
+        if (playerBalanceManager != null)
+        {
+            Debug.Log("Current Balance: " + playerBalanceManager.currentBalance);
+            balanceDisplay.text = playerBalanceManager.currentBalance.ToString();
+        }
+        else
+        {
+            Debug.LogError("PlayerBalanceManager instance is null after fetching balance.");
+        }
 
     }
 }

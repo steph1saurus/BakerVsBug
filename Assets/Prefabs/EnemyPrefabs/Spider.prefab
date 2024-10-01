@@ -94,9 +94,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5250760295014332907}
   - component: {fileID: 3454844501081485910}
+  - component: {fileID: 3531961209970294160}
+  - component: {fileID: 1472782541898714564}
   m_Layer: 0
   m_Name: Spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,3 +154,28 @@ CapsuleCollider2D:
   m_Offset: {x: 0.015337408, y: -0.015337467}
   m_Size: {x: 0.9601227, y: 1.9509201}
   m_Direction: 0
+--- !u!114 &3531961209970294160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642524327761603050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17d6d78706aa4d7ebdbc83af03aa17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1472782541898714564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642524327761603050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d8e5d700da04b859d04c19c572f74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoints: 0

@@ -94,9 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6319097729053460571}
   - component: {fileID: 3308409415758435588}
+  - component: {fileID: -6060528494079515337}
   m_Layer: 0
   m_Name: Smurf
-  m_TagString: Untagged
+  m_TagString: OtherEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,3 +153,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-6060528494079515337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726554882754579966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1bae6607bdf45f6908c8c8c850980b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
