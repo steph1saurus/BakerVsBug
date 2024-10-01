@@ -12,23 +12,33 @@ public class GameManager : MonoBehaviour
     public GameObject completionText;
     public GameObject gameOverScreen;
 
-    [Header ("Variables")]
-  
+    [Header("Variables")]
+
 
 
     [Header("Checks")]
     private bool levelCompleteBool = false;
+    private bool isPaused = false;
 
     // Update is called once per frame
     void Update()
     {
-        LevelComplete();
-
-        GameObject[] bakedGoods = GameObject.FindGameObjectsWithTag("BakedGood");
-
-        if (bakedGoods.Length ==0)
+        if (!isPaused)
         {
-            GameOver();
+            Time.timeScale = 1f;
+
+            LevelComplete();
+
+            GameObject[] bakedGoods = GameObject.FindGameObjectsWithTag("BakedGood");
+
+            if (bakedGoods.Length == 0)
+            {
+                GameOver();
+            }
+        }
+        else if (isPaused)
+        {
+            TimePaused();
         }
 
     }
@@ -36,19 +46,19 @@ public class GameManager : MonoBehaviour
 
     private void LevelComplete()
     {
-        if (progressBar.value ==1 && !levelCompleteBool)
+        if (progressBar.value == 1 && !levelCompleteBool)
         {
             levelCompleteBool = true;
             completionText.SetActive(true);
-                
-                Time.timeScale = 0;
+
+            TimePaused();
             StartCoroutine(HandleLevelCompletion());
         }
     }
 
     private IEnumerator HandleLevelCompletion()
     {
-      
+
 
         // Wait for 3 seconds
         yield return new WaitForSecondsRealtime(3f);  // Realtime because Time.timeScale is set to 0
@@ -64,6 +74,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
+        TimePaused();
     }
 
 
@@ -74,8 +85,15 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        LoadScene("TitleScene");
     }
+
+    private void TimePaused()
+    {
+        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+    }
+
+    
 
 }
 

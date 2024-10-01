@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.25
-  stoppingDistance: 0.1
+  stoppingDistance: 0.01
   touchingBakedGood: 0
 --- !u!114 &7154188718332006298
 MonoBehaviour:

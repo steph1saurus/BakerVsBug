@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 115384881780193531}
+  - component: {fileID: -984749677418464033}
+  - component: {fileID: 1753936383236824602}
   m_Layer: 0
   m_Name: Roach
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +34,31 @@ Transform:
   - {fileID: 3643558945897946685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-984749677418464033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739695199039302376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783d32412d4b54cd080f5744377fb280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1753936383236824602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739695199039302376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d8e5d700da04b859d04c19c572f74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoints: 10
 --- !u!1 &2724960214621477332
 GameObject:
   m_ObjectHideFlags: 0
