@@ -5,7 +5,11 @@ using System.Collections;
 public class BakedGoodHealth : MonoBehaviour
 {
     [Header("Max health points")]
-    public float lifePoints = 20f;
+    public float initialLifePoints = 20f;
+    public float currentLifepoints;
+
+    [Header("Payout amount")]
+    public int levelPayout;
 
     [SerializeField] FloatingHealthBar healthBar;
  
@@ -23,7 +27,8 @@ public class BakedGoodHealth : MonoBehaviour
 
     private void Start()
     {
-        healthBar.UpdateHealthBar(lifePoints);
+        currentLifepoints = initialLifePoints;
+        healthBar.UpdateHealthBar(currentLifepoints);
         
     }
 
@@ -65,11 +70,11 @@ public class BakedGoodHealth : MonoBehaviour
     public void ReduceLife()
     {
 
-        lifePoints -= 0.5f;
-        healthBar.UpdateHealthBar(lifePoints);
+        currentLifepoints -= 0.5f;
+        healthBar.UpdateHealthBar(currentLifepoints);
 
         //destroy baked good when lifepoints = 0
-        if (lifePoints <= 0)
+        if (currentLifepoints <= 0)
         {
             Destroy(gameObject);
             Debug.Log("Baked good destroyed");

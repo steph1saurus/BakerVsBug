@@ -393,7 +393,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0128cbe4f6f4e48bebdfa958ff487cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoints: 20
+  initialLifePoints: 20
+  currentLifepoints: 0
+  levelPayout: 50
   healthBar: {fileID: 1959240207165932699}
 --- !u!70 &513661415474871369
 CapsuleCollider2D:

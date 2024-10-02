@@ -1,50 +1,53 @@
 using UnityEngine;
 using System.Collections;
-
 using TMPro;
-
 
 public class BalanceDisplay : MonoBehaviour
 {
     public TextMeshProUGUI balanceDisplay;
 
+    private BakedGoodPayoutManager bakedGoodPayoutManager; // Reference to BakedGoodPayoutManager
+
     void Start()
     {
         try
         {
-            PlayerBalanceManager playerBalanceManager = FindObjectOfType<PlayerBalanceManager>();
-            // Ensure the balance manager is initialized
-            if (playerBalanceManager != null)
+            bakedGoodPayoutManager = FindObjectOfType<BakedGoodPayoutManager>();
+
+            // Ensure the BakedGoodPayoutManager is initialized
+            if (bakedGoodPayoutManager != null)
             {
-                StartCoroutine(ShowBalance(playerBalanceManager));
+                // Initial display of the balance
+                UpdateBalanceDisplay(bakedGoodPayoutManager.playerCurrencyBalance);
             }
             else
             {
-                throw new System.Exception("PlayerBalanceManager not found in current scene");
+                throw new System.Exception("BakedGoodPayoutManager not found in current scene");
             }
         }
         catch (System.Exception e)
         {
-            Debug.LogError("PlayerBalanceManager instance not found." + e.Message);
+            Debug.LogError("Error initializing BalanceDisplay: " + e.Message);
         }
     }
 
-
-    private IEnumerator ShowBalance(PlayerBalanceManager playerBalanceManager)
+    // Method to update the balance display
+    private void UpdateBalanceDisplay(int balance)
     {
-        // Wait until the balance is fetched (assuming FetchCurrentBalance is a coroutine)
-        yield return playerBalanceManager.FetchCurrentBalance();
+        Debug.Log("Current Balance: " + balance);
+        balanceDisplay.text = balance.ToString();
+    }
 
-        // Ensure the balance is updated and instance is valid
-        if (playerBalanceManager != null)
+    // Call this method to refresh the balance display after completing a level
+    public void RefreshBalanceDisplay()
+    {
+        if (bakedGoodPayoutManager != null)
         {
-            Debug.Log("Current Balance: " + playerBalanceManager.currentBalance);
-            balanceDisplay.text = playerBalanceManager.currentBalance.ToString();
+            UpdateBalanceDisplay(bakedGoodPayoutManager.playerCurrencyBalance);
         }
         else
         {
-            Debug.LogError("PlayerBalanceManager instance is null after fetching balance.");
+            Debug.LogError("BakedGoodPayoutManager instance is null while refreshing balance.");
         }
-
     }
 }

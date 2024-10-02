@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2364663577474958146
+--- !u!1001 &898364379987493082
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,17 +8,53 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 971148657515208859, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Size.x
+      value: 22.950666
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Size.y
+      value: 22.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 830d11eee1b784e34b8ce96e8cfcd92a, type: 3}
     - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_Color.b
-      value: 0.3987629
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_Color.g
-      value: 0.761389
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_Color.r
-      value: 0.8207547
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646561791838503271, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450250072053070511, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450250072053070511, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770599275671896239, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5161705419046157872, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +98,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6776510605812496648, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_Name
-      value: Pie3
+      value: Cookie
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776510605812496648, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077609565852455313, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: levelPayout
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077609565852455313, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: initialLifePoints
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783158312999697932, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9148829264276309938, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
