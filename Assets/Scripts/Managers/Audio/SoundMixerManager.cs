@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SoundMixerManager : MonoBehaviour
 {
+    public static SoundMixerManager instance;
+
     [Header("Audio Source")]
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] public AudioSource clickSound;
@@ -34,14 +36,22 @@ public class SoundMixerManager : MonoBehaviour
 
     private void Awake()
     {
-        // Get the AudioSource component and start the music
-        audioSource = gameObject.GetComponent<AudioSource>();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            // Get the AudioSource component and start the music
+            audioSource = gameObject.GetComponent<AudioSource>();
 
-        // Assign the output to the Music group in the AudioMixer
-        audioSource.outputAudioMixerGroup = musicMixerGroup;
+            // Assign the output to the Music group in the AudioMixer
+            audioSource.outputAudioMixerGroup = musicMixerGroup;
 
-        // Play the default music initially
-        PlayDefaultMusic();
+            // Play the default music initially
+            PlayDefaultMusic();
+        }
+        else Destroy(gameObject);
+
+       
 
     }
 

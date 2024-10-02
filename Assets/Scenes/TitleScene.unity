@@ -961,8 +961,8 @@ MonoBehaviour:
   mainSlider: {fileID: 1696130899}
   musicSlider: {fileID: 100138113}
   SFXSlider: {fileID: 1926801629}
-  defaultMusic: {fileID: 8300000, guid: a73b50ea7984f3d45957d4c12cbe9497, type: 3}
-  sceneMusic: {fileID: 8300000, guid: 89e6bc608da7b47d4914f3d9c2484e48, type: 3}
+  defaultMusic: {fileID: 8300000, guid: 1dd655ac6750747b4abd42fc40e494e4, type: 3}
+  sceneMusic: {fileID: 8300000, guid: 5069e94b36f1f4c329e9e2e508c5b2b3, type: 3}
 --- !u!4 &310360863
 Transform:
   m_ObjectHideFlags: 0
