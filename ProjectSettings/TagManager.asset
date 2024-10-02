@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Inventory
   - OtherEnemy
+  - Event
   layers:
   - Default
   - TransparentFX

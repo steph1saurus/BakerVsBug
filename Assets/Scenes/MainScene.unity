@@ -1538,7 +1538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &648016701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2303,7 +2303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &898176597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2719,7 +2719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1047925048
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3166,8 +3166,8 @@ MonoBehaviour:
   - itemName: BugbombPrefab
     prefab: {fileID: 2318714802576354625, guid: 18273098ed25d45a8b14d0b8a7a77acd, type: 3}
     buttonImage: {fileID: 21300000, guid: 66f3da922026b48d981926c298f4f419, type: 3}
-  buttonPrefab: {fileID: 0}
-  buttonParent: {fileID: 0}
+  buttonPrefab: {fileID: 3226810397894733553, guid: 6eb9bad9800034d6ebc22bb38eeb18ba, type: 3}
+  buttonParent: {fileID: 1848015264}
   maxButtons: 4
 --- !u!1 &1265362462
 GameObject:
@@ -5539,6 +5539,10 @@ PrefabInstance:
     - target: {fileID: 1006454757917857249, guid: 6eb9bad9800034d6ebc22bb38eeb18ba, type: 3}
       propertyPath: m_Name
       value: Item1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006454757917857249, guid: 6eb9bad9800034d6ebc22bb38eeb18ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3159525110570981666, guid: 6eb9bad9800034d6ebc22bb38eeb18ba, type: 3}
       propertyPath: m_Pivot.x
