@@ -12,13 +12,21 @@ public class GameManager : MonoBehaviour
     public GameObject completionText;
     public GameObject gameOverScreen;
 
-    [Header("Variables")]
-
-
-
     [Header("Checks")]
-    private bool levelCompleteBool = false;
+    public bool levelCompleteBool = false;
     private bool isPaused = false;
+
+    public static GameManager instance;
+
+    private void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+            Destroy(gameObject);
+    }
 
     // Update is called once per frame
     void Update()
@@ -44,7 +52,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void LevelComplete()
+    public void LevelComplete()
     {
         if (progressBar.value == 1 && !levelCompleteBool)
         {
@@ -74,7 +82,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
+        levelCompleteBool = true;
         TimePaused();
+        StartCoroutine(HandleLevelCompletion());
     }
 
 
