@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1566787716007951167}
   - component: {fileID: 5388265869812301496}
   - component: {fileID: -8344633185270294937}
-  - component: {fileID: -900151166613153767}
+  - component: {fileID: -8100392007303550257}
   m_Layer: 8
   m_Name: Swatter
   m_TagString: SwatterOrSpray
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-900151166613153767
+--- !u!114 &-8100392007303550257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7224057021289408969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 433b00f2830514fbe955d1107d335432, type: 3}
+  m_Script: {fileID: 11500000, guid: 9744b5cb54731411dbe59ca2a0f9d055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0

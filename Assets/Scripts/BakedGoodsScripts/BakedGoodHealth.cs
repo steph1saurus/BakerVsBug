@@ -45,8 +45,8 @@ public class BakedGoodHealth : MonoBehaviour
         // Loop through each enemy to check if any has touchingBakedGood = true
         foreach (GameObject enemy in enemies)
         {
-            AntController antController = enemy.GetComponent<AntController>();
-            if (antController != null && antController.touchingBakedGood)
+            EnemyController enemyController= enemy.GetComponent<EnemyController>();
+            if (enemyController != null && enemyController.touchingBakedGood)
             {
                 anyEnemyTouching = true;
                 break; // Only need one touching enemy to start damage

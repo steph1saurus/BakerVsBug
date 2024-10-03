@@ -7,7 +7,6 @@ TagManager:
   - BakedGood
   - Enemy
   - Inventory
-  - OtherEnemy
   - Event
   - LevelEditorManager
   - ItemImage
