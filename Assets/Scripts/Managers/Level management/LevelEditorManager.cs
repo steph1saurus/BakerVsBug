@@ -4,7 +4,7 @@ public class LevelEditorManager : MonoBehaviour
 {
     public ItemController[] itemButtons; // Array of item buttons
     public GameObject[] itemPrefabs; // Array of item prefabs
-    public GameObject[] itemImage;
+    public GameObject[] itemImage; //Array of item images
 
 
     public int currentButtonPressed; // Reference buttonID
@@ -24,6 +24,6 @@ public class LevelEditorManager : MonoBehaviour
 
         }
     
-    }
+}
 
 

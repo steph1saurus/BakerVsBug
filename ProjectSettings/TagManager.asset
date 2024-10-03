@@ -11,6 +11,7 @@ TagManager:
   - Event
   - LevelEditorManager
   - ItemImage
+  - SwatterOrSpray
   layers:
   - Default
   - TransparentFX
