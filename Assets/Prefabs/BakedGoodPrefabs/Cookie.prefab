@@ -140,6 +140,14 @@ PrefabInstance:
       propertyPath: initialLifePoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7265110007225180534, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265110007225180534, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8783158312999697932, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_Layer
       value: 3
