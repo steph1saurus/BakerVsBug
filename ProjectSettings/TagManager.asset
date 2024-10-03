@@ -46,3 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BakedItemsOnScreen
+    uniqueID: 1553523805
+    locked: 0
+  - name: EnemiesOnScreen
+    uniqueID: 3186308137
+    locked: 0
+  - name: ItemOnScreen
+    uniqueID: 225962033
+    locked: 0
