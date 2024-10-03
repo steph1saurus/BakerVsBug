@@ -6,7 +6,7 @@ public class AntController : MonoBehaviour
 {
 
     public float speed = .25f;
-    public float stoppingDistance = 0.1f; //ensures enemy stops once it's close enough to the collider of baked good
+    public float stoppingDistance = 0; //ensures enemy stops once it's close enough to the collider of baked good
     private GameObject closestBakedGood;
 
     public bool touchingBakedGood = false;

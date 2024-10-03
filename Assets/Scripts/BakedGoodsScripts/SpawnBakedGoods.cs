@@ -1,5 +1,4 @@
 using System.Collections;
-
 using UnityEngine;
 
 public class SpawnBakedGoods : MonoBehaviour
@@ -9,21 +8,15 @@ public class SpawnBakedGoods : MonoBehaviour
     public LayerMask bakedGoodsLayerMask;
     public LayerMask enemyLayerMask;
     private Vector3 spawnPosition;
-
-
+    private Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
+        mainCamera = Camera.main; // Get the main camera reference
+
         spawnPosition = new Vector3(0, 0, 0);
         Instantiate(bakedGoodsPrefab[0], spawnPosition, Quaternion.identity);
-        StartCoroutine(spawnNewBakedGoods());
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         StartCoroutine(spawnNewBakedGoods());
     }
 
@@ -33,17 +26,15 @@ public class SpawnBakedGoods : MonoBehaviour
         {
             yield return new WaitForSeconds(20f);
 
-
             Vector3 newSpawnPosition = GetValidSpawnPosition();
             if (newSpawnPosition != Vector3.zero)
             {
                 GameObject newBakedGood = Instantiate(bakedGoodsPrefab[Random.Range(0, bakedGoodsPrefab.Length)],
-                newSpawnPosition, Quaternion.identity);
+                    newSpawnPosition, Quaternion.identity);
 
                 // Start the coroutine to check for enemy collision and apply damage after 3 seconds
                 StartCoroutine(CheckForEnemyCollision(newBakedGood));
             }
-
         }
     }
 
@@ -51,11 +42,7 @@ public class SpawnBakedGoods : MonoBehaviour
     {
         for (int i = 0; i < 10; i++) // Try 10 times to find a valid position
         {
-            Vector3 potentialPosition = new Vector3(
-                Random.Range(-10f, 10f), // Adjust the range as per your scene
-                Random.Range(-10f, 10f),
-                0
-            );
+            Vector3 potentialPosition = GetRandomScreenPosition();
 
             // Check if this position overlaps with any existing baked goods
             Collider2D[] colliders = Physics2D.OverlapCircleAll(potentialPosition, spawnRadius, bakedGoodsLayerMask);
@@ -65,6 +52,19 @@ public class SpawnBakedGoods : MonoBehaviour
             }
         }
         return Vector3.zero;
+    }
+
+    Vector3 GetRandomScreenPosition()
+    {
+        // Get the screen bounds in world space
+        Vector3 screenBottomLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, mainCamera.nearClipPlane));
+        Vector3 screenTopRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, mainCamera.nearClipPlane));
+
+        // Generate a random position within the screen bounds
+        float randomX = Random.Range(screenBottomLeft.x, screenTopRight.x);
+        float randomY = Random.Range(screenBottomLeft.y, screenTopRight.y);
+
+        return new Vector3(randomX, randomY, 0); // Set Z to 0 for 2D
     }
 
     IEnumerator CheckForEnemyCollision(GameObject bakedGood)
@@ -79,10 +79,7 @@ public class SpawnBakedGoods : MonoBehaviour
             yield return new WaitForSeconds(3f); // Wait for 3 seconds
 
             // Apply damage or other effects to the baked good
-            // (You can add your custom logic here)
             Debug.Log("Baked good overlapped with enemy and took damage!");
-
         }
     }
 }
-
