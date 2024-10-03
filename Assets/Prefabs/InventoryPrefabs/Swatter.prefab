@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8061697232017009188}
   - component: {fileID: 1566787716007951167}
-  - component: {fileID: -333960696036880841}
   - component: {fileID: 5388265869812301496}
   - component: {fileID: -8344633185270294937}
-  m_Layer: 6
+  - component: {fileID: -900151166613153767}
+  m_Layer: 8
   m_Name: Swatter
   m_TagString: Inventory
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4e8f940c2a1024244805c0828c40b433, type: 3}
-  m_Color: {r: 0.043075833, g: 0.8301887, b: 0.10299848, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-333960696036880841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7224057021289408969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0654773c6095d48139d8d88f2aaf9193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swatterZPosition: -3
 --- !u!61 &5388265869812301496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,3 +159,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-900151166613153767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224057021289408969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433b00f2830514fbe955d1107d335432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
