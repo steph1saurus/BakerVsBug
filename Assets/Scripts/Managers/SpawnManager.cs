@@ -8,7 +8,6 @@ public class SpawnManager : MonoBehaviour
     
     [Header("Game objects")]
     public GameObject[] enemyPrefab; // Assuming enemyPrefab[0] is Ant and enemyPrefab[1] is BigAnt
-    public TextMeshProUGUI enemyWarningText;
 
     [Header("Spawn wave")]
     public int enemyCount;
