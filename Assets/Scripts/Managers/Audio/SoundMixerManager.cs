@@ -10,7 +10,7 @@ public class SoundMixerManager : MonoBehaviour
 
     [Header("Audio Source")]
     [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] public AudioSource clickSound;
+   
     [SerializeField] private AudioSource audioSource;
 
     [SerializeField] public AudioMixerGroup musicMixerGroup;
@@ -26,10 +26,21 @@ public class SoundMixerManager : MonoBehaviour
     private const string MusicVolumeKey = "MusicVolKey";
     private const string SFXVolumeKey = "SFXVolKey";
 
-    [Header ("AudioClips")]
+    [Header ("Music")]
     // Music clips for different scenes
     public AudioClip defaultMusic; // For title scene and other scenes
     public AudioClip sceneMusic;  // For main scene
+
+    [Header("Enemy Music")]
+    [SerializeField] public AudioClip smallEnemyMusic;
+    [SerializeField] public AudioClip bigEnemyMusic;
+
+    [Header ("Sounds")]
+    [SerializeField] public AudioSource clickSound;
+    [SerializeField] public AudioClip swatterSound;
+    [SerializeField] public AudioClip explosionSound;
+    [SerializeField] public AudioClip spraySound;
+    [SerializeField] public AudioClip levelCompleteSound; 
 
     [Header("CurrentScene")]
     private string currentScene;
@@ -117,6 +128,10 @@ public class SoundMixerManager : MonoBehaviour
         if (currentScene == "MainScene")
         {
             PlaySceneMusic();
+        }
+        else if (currentScene =="CreditScene")
+        {
+            
         }
         else
         {
