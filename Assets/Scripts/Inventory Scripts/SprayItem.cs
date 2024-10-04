@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SprayItem : MonoBehaviour
 {
     public int ID;
     public GameObject sprayEffectPrefab; // Assign your particle effect prefab in the Inspector
     private LevelEditorManager levelEditorManager;
+
+    [Header("Spray effect")]
     private float holdTime = 0f; // Time the button is held down
     private bool isHolding = false; // To track if the button is being held
     private GameObject activeSprayEffect; // To keep track of the instantiated particle effect
     public Vector3 sprayEffectOffset = new Vector3(-2f, 0f, 0f); // Offset for the particle effect
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip spraySound;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +64,7 @@ public class SprayItem : MonoBehaviour
             // Instantiate the particle effect if hold time is less than 5 seconds
             if (holdTime < 5f && activeSprayEffect == null)
             {
+               
                 activeSprayEffect = Instantiate(sprayEffectPrefab, transform.position + sprayEffectOffset, Quaternion.identity);
             }
 
@@ -113,4 +121,7 @@ public class SprayItem : MonoBehaviour
         yield return new WaitForSeconds(delay); // Wait for 3 seconds
         holdTime = 0f; // Reset the hold time
     }
+
+
+   
 }

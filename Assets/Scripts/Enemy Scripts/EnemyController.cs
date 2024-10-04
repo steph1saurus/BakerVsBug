@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class EnemyController : MonoBehaviour
     public bool touchingStickyTrap = false;
 
     private Coroutine damageCoroutine;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip eatingSound;
 
     private void Start()
     {
@@ -97,6 +102,12 @@ public class EnemyController : MonoBehaviour
         while (touchingBakedGood && bakedGoodHealth != null)
         {
             bakedGoodHealth.ReduceLife();
+            // Play the eating sound as a one-shot
+            if (audioSource != null && eatingSound != null)
+            {
+                audioSource.PlayOneShot(eatingSound);
+            }
+
             yield return new WaitForSeconds(1f); // Wait for 1 second between life reduction
         }
     }
