@@ -3139,7 +3139,6 @@ MonoBehaviour:
   - {fileID: 8642524327761603050, guid: 7d9177c94fe0a40f0b6ba9cfcb0985d3, type: 3}
   - {fileID: 21750321588176455, guid: 31b6161a1845a4689b8682379c6a9cee, type: 3}
   - {fileID: 6726554882754579966, guid: 42f445cb055c5470ab32b4bfacfd0acc, type: 3}
-  enemyWarningText: {fileID: 889073952}
   enemyCount: 0
   waveNumber: 0
   maxEnemies: 20

@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -10,7 +9,7 @@ public class SoundMixerManager : MonoBehaviour
 
     [Header("Audio Source")]
     [SerializeField] private AudioMixer audioMixer;
-   
+
     [SerializeField] private AudioSource audioSource;
 
     [SerializeField] public AudioMixerGroup musicMixerGroup;
@@ -26,21 +25,13 @@ public class SoundMixerManager : MonoBehaviour
     private const string MusicVolumeKey = "MusicVolKey";
     private const string SFXVolumeKey = "SFXVolKey";
 
-    [Header ("Music")]
+    [Header("Music")]
     // Music clips for different scenes
     public AudioClip defaultMusic; // For title scene and other scenes
     public AudioClip sceneMusic;  // For main scene
 
-    [Header("Enemy Music")]
-    [SerializeField] public AudioClip smallEnemyMusic;
-    [SerializeField] public AudioClip bigEnemyMusic;
+   
 
-    [Header ("Sounds")]
-    [SerializeField] public AudioSource clickSound;
-    [SerializeField] public AudioClip swatterSound;
-    [SerializeField] public AudioClip explosionSound;
-    [SerializeField] public AudioClip spraySound;
-    [SerializeField] public AudioClip levelCompleteSound; 
 
     [Header("CurrentScene")]
     private string currentScene;
@@ -62,7 +53,7 @@ public class SoundMixerManager : MonoBehaviour
         }
         else Destroy(gameObject);
 
-       
+
 
     }
 
@@ -92,7 +83,7 @@ public class SoundMixerManager : MonoBehaviour
     public void SetMusicVolume(float level)
     {
         float volume = Mathf.Log10(level) * 20;
-        audioMixer.SetFloat("Music",volume);
+        audioMixer.SetFloat("Music", volume);
         PlayerPrefs.SetFloat(MusicVolumeKey, level);
         PlayerPrefs.Save();
 
@@ -128,10 +119,6 @@ public class SoundMixerManager : MonoBehaviour
         if (currentScene == "MainScene")
         {
             PlaySceneMusic();
-        }
-        else if (currentScene =="CreditScene")
-        {
-            
         }
         else
         {

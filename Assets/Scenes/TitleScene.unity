@@ -969,7 +969,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 44a963ecdb72c4365befe40c79db06f3, type: 2}
-  clickSound: {fileID: 1319679787}
   audioSource: {fileID: 310360864}
   musicMixerGroup: {fileID: -227728632433531647, guid: 44a963ecdb72c4365befe40c79db06f3, type: 2}
   musicVolumeParameter: Music
