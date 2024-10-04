@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f86d5ab9b860490dadc45cc1810cef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bakedGoodZPosition: -1
 --- !u!114 &7077609565852455313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,11 +395,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0128cbe4f6f4e48bebdfa958ff487cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialLifePoints: 10
+  initialLifePoints: 20
   currentLifepoints: 0
   levelPayout: 20
   healthBar: {fileID: 1959240207165932699}
-  reduceLifeClip: {fileID: 0}
   isTakingDamage: 0
 --- !u!58 &307901293548439945
 CircleCollider2D:

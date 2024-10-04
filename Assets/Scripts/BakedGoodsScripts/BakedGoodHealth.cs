@@ -34,38 +34,38 @@ public class BakedGoodHealth : MonoBehaviour
 
     private void Update()
     {
-        CheckEnemiesTouching();
+        //CheckEnemiesTouching();
     }
-    private void CheckEnemiesTouching()
-    {
-        // Find all objects with the "Enemy" tag in the scene
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        bool anyEnemyTouching = false;
+    //private void CheckEnemiesTouching()
+    //{
+    //    // Find all objects with the "Enemy" tag in the scene
+    //    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    //    bool anyEnemyTouching = false;
 
-        // Loop through each enemy to check if any has touchingBakedGood = true
-        foreach (GameObject enemy in enemies)
-        {
-            EnemyController enemyController= enemy.GetComponent<EnemyController>();
-            if (enemyController != null && enemyController.touchingBakedGood)
-            {
-                anyEnemyTouching = true;
-                break; // Only need one touching enemy to start damage
-            }
-        }
+    //    // Loop through each enemy to check if any has touchingBakedGood = true
+    //    foreach (GameObject enemy in enemies)
+    //    {
+    //        EnemyController enemyController= enemy.GetComponent<EnemyController>();
+    //        if (enemyController != null && enemyController.touchingBakedGood)
+    //        {
+    //            anyEnemyTouching = true;
+    //            break; // Only need one touching enemy to start damage
+    //        }
+    //    }
 
-        // Start or stop damage based on whether any enemy is touching
-        if (anyEnemyTouching && !isTakingDamage)
-        {
-            isTakingDamage = true;
-            StartCoroutine(DamageOverTime()); // Start taking damage if at least one enemy is touching
-        }
-        else if (!anyEnemyTouching && isTakingDamage)
-        {
-            isTakingDamage = false;
-            StopCoroutine(DamageOverTime()); // Stop taking damage if no enemies are touching
-        }
+    //    // Start or stop damage based on whether any enemy is touching
+    //    if (anyEnemyTouching && !isTakingDamage)
+    //    {
+    //        isTakingDamage = true;
+    //        StartCoroutine(DamageOverTime()); // Start taking damage if at least one enemy is touching
+    //    }
+    //    else if (!anyEnemyTouching && isTakingDamage)
+    //    {
+    //        isTakingDamage = false;
+    //        StopCoroutine(DamageOverTime()); // Stop taking damage if no enemies are touching
+    //    }
 
-    }
+    //}
 
     public void ReduceLife()
     {
@@ -83,7 +83,7 @@ public class BakedGoodHealth : MonoBehaviour
 
     
     // Coroutine to reduce life points every second
-    private IEnumerator DamageOverTime()
+    public IEnumerator DamageOverTime()
     {
         while (isTakingDamage)
         {

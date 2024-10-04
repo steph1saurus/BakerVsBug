@@ -12,23 +12,21 @@ public class EnemyController : MonoBehaviour
     public bool touchingBakedGood = false;
     public bool touchingStickyTrap = false;
 
+    private Coroutine damageCoroutine;
 
     private void Start()
     {
         initialSpeed = speed;
     }
 
-
     // Update is called once per frame
     void Update()
     {
-
         closestBakedGood = FindClosestObject();
         if (closestBakedGood != null)
         {
             MoveTowardsClosestObject();
         }
-
     }
 
     public GameObject FindClosestObject()
@@ -49,7 +47,6 @@ public class EnemyController : MonoBehaviour
             }
         }
         return closest;
-
     }
 
     private void MoveTowardsClosestObject()
@@ -63,7 +60,6 @@ public class EnemyController : MonoBehaviour
             if (bakedGoodCollider != null)
             {
                 float colliderRadius = bakedGoodCollider.bounds.extents.magnitude;
-
                 float totalStoppingDistance = colliderRadius + stoppingDistance;
 
                 if (distanceToTarget > totalStoppingDistance)
@@ -71,16 +67,37 @@ public class EnemyController : MonoBehaviour
                     touchingBakedGood = false;
                     direction.Normalize();
                     transform.position += direction * speed * Time.deltaTime;
+
+                    // Stop coroutine if the enemy moves away from the baked good
+                    if (damageCoroutine != null)
+                    {
+                        StopCoroutine(damageCoroutine);
+                        damageCoroutine = null;
+                    }
                 }
                 else
                 {
                     touchingBakedGood = true;
+
+                    // Start the coroutine if touching the baked good
+                    if (damageCoroutine == null)
+                    {
+                        damageCoroutine = StartCoroutine(ReduceLifeOverTime(closestBakedGood));
+                    }
                 }
             }
-
         }
     }
 
- 
+    // Coroutine to reduce life points over time (every 1 second)
+    private IEnumerator ReduceLifeOverTime(GameObject bakedGood)
+    {
+        BakedGoodHealth bakedGoodHealth = bakedGood.GetComponent<BakedGoodHealth>();
 
+        while (touchingBakedGood && bakedGoodHealth != null)
+        {
+            bakedGoodHealth.ReduceLife();
+            yield return new WaitForSeconds(1f); // Wait for 1 second between life reduction
+        }
+    }
 }
