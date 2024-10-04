@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8336406571612627594}
   - component: {fileID: 8296509375279235018}
-  - component: {fileID: 7814166459718607003}
   - component: {fileID: 7995332798474908447}
   - component: {fileID: 199357520450572824}
   - component: {fileID: 7354809988660283034}
-  - component: {fileID: -920723326471489617}
+  - component: {fileID: -1764580689603905127}
   m_Layer: 7
   m_Name: Ladybug
   m_TagString: Enemy
@@ -82,21 +81,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7814166459718607003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719073358444528270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6fe47fcddae42b091876cd883425c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.35
-  stoppingDistance: 0.1
-  touchingBakedGood: 0
 --- !u!114 &7995332798474908447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +191,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.86, y: 9.257796}
   m_EdgeRadius: 0
---- !u!114 &-920723326471489617
+--- !u!114 &-1764580689603905127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,9 +200,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719073358444528270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6fe47fcddae42b091876cd883425c4, type: 3}
+  m_Script: {fileID: 11500000, guid: b4f7c5b1b062a4495a82b532ac05d9d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  stoppingDistance: 0.1
-  touchingBakedGood: 1
+  speed: 0.3
+  initialSpeed: 0
+  stoppingDistance: 0
+  touchingBakedGood: 0
+  touchingStickyTrap: 0

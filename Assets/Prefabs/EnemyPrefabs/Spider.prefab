@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5250760295014332907}
   - component: {fileID: 3454844501081485910}
-  - component: {fileID: 3531961209970294160}
   - component: {fileID: 1472782541898714564}
   - component: {fileID: 4288495980319979326}
+  - component: {fileID: 5320598666715248003}
   m_Layer: 7
   m_Name: Spider
   m_TagString: Enemy
@@ -67,21 +67,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015337408, y: -0.015337467}
-  m_Size: {x: 0.9601227, y: 1.9509201}
+  m_Offset: {x: 0.30840993, y: 0.117877424}
+  m_Size: {x: 3.464571, y: 4.5835805}
   m_Direction: 0
---- !u!114 &3531961209970294160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8642524327761603050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17d6d78706aa4d7ebdbc83af03aa17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1472782541898714564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +135,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5320598666715248003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642524327761603050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f7c5b1b062a4495a82b532ac05d9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  initialSpeed: 0
+  stoppingDistance: 0
+  touchingBakedGood: 0
+  touchingStickyTrap: 0

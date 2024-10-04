@@ -5,11 +5,18 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float speed;
+    public float initialSpeed;
     public float stoppingDistance = 0;
     private GameObject closestBakedGood;
 
     public bool touchingBakedGood = false;
+    public bool touchingStickyTrap = false;
 
+
+    private void Start()
+    {
+        initialSpeed = speed;
+    }
 
 
     // Update is called once per frame
@@ -73,5 +80,7 @@ public class EnemyController : MonoBehaviour
 
         }
     }
+
+ 
 
 }

@@ -15,7 +15,7 @@ public class BakedGoodHealth : MonoBehaviour
  
 
 
-    private bool isTakingDamage = false; // To track if the damage coroutine is running
+   public bool isTakingDamage = false; // To track if the damage coroutine is running
 
 
 

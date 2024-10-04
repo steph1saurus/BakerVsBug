@@ -11,6 +11,7 @@ TagManager:
   - LevelEditorManager
   - ItemImage
   - SwatterOrSpray
+  - Sticky
   layers:
   - Default
   - TransparentFX

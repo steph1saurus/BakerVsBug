@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6319097729053460571}
   - component: {fileID: 3308409415758435588}
-  - component: {fileID: -6060528494079515337}
   - component: {fileID: 3771302826024024474}
   - component: {fileID: 4974255769028769523}
+  - component: {fileID: 2978493632672621700}
   m_Layer: 7
   m_Name: Smurf
   m_TagString: Enemy
@@ -70,18 +70,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-6060528494079515337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726554882754579966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b1bae6607bdf45f6908c8c8c850980b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &3771302826024024474
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -179,3 +167,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.84, y: 5.0412307}
   m_EdgeRadius: 0
+--- !u!114 &2978493632672621700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726554882754579966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f7c5b1b062a4495a82b532ac05d9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  initialSpeed: 0
+  stoppingDistance: 0
+  touchingBakedGood: 0
+  touchingStickyTrap: 0

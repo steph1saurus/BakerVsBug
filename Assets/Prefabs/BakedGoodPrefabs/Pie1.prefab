@@ -397,6 +397,7 @@ MonoBehaviour:
   currentLifepoints: 0
   levelPayout: 50
   healthBar: {fileID: 1959240207165932699}
+  isTakingDamage: 0
 --- !u!58 &307901293548439945
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -429,9 +430,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.041658282}
+  m_Offset: {x: 0, y: -0.025939345}
   serializedVersion: 2
-  m_Radius: 1.6850497
+  m_Radius: 1.2950643
 --- !u!1 &8783158312999697932
 GameObject:
   m_ObjectHideFlags: 0
