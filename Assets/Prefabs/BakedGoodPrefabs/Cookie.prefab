@@ -84,6 +84,18 @@ PrefabInstance:
       propertyPath: reduceLifeClip
       value: 
       objectReference: {fileID: 8300000, guid: f855f96bfc01a41beb5b03bceae9b9de, type: 3}
+    - target: {fileID: 7077609565852455313, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: initialLifePoints
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265110007225180534, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265110007225180534, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

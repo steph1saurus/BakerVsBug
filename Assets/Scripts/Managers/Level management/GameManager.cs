@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 
 public class GameManager : MonoBehaviour
 {
     [Header("Game objects")]
     public Slider progressBar;
-    public GameObject completionText;
     public GameObject gameOverScreen;
 
     [Header("Checks")]
     public bool levelCompleteBool = false;
     private bool isPaused = false;
+
+    
 
     public static GameManager instance;
 
@@ -57,17 +59,17 @@ public class GameManager : MonoBehaviour
         if (progressBar.value == 1 && !levelCompleteBool)
         {
             levelCompleteBool = true;
-            completionText.SetActive(true);
 
             TimePaused();
+            
             StartCoroutine(HandleLevelCompletion());
+            
         }
     }
 
     private IEnumerator HandleLevelCompletion()
     {
-
-
+       
         // Wait for 3 seconds
         yield return new WaitForSecondsRealtime(3f);  // Realtime because Time.timeScale is set to 0
 
@@ -100,7 +102,7 @@ public class GameManager : MonoBehaviour
 
     private void TimePaused()
     {
-        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+        Time.timeScale = 0f;
     }
 
     
