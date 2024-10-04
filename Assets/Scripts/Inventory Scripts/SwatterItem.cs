@@ -7,6 +7,10 @@ public class SwatterItem : MonoBehaviour
     public int ID;
     private LevelEditorManager levelEditorManager;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip swatterSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,13 @@ public class SwatterItem : MonoBehaviour
                     if (enemyHealth != null)
                     {
                         enemyHealth.lifePoints -= 1;
+
+                        // Play swatter sound when enemy health is reduced
+                        if (audioSource != null && swatterSound != null)
+                        {
+                            audioSource.PlayOneShot(swatterSound);
+                        }
+
 
                         // Optionally destroy the enemy if health reaches 0
                         if (enemyHealth.lifePoints <= 0)

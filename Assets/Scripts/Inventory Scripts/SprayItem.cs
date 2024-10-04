@@ -39,6 +39,14 @@ public class SprayItem : MonoBehaviour
             holdTime += Time.deltaTime; // Increment hold time
             isHolding = true;
 
+            // Play the spray sound on loop
+            if (audioSource != null && spraySound != null && !audioSource.isPlaying)
+            {
+                audioSource.loop = true; // Enable looping
+                audioSource.clip = spraySound;
+                audioSource.Play(); // Start playing sound
+            }
+
             // Check for enemies within the trigger area
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 1f); // Adjust radius as needed
 
@@ -89,6 +97,13 @@ public class SprayItem : MonoBehaviour
                 isHolding = false; // Reset holding state
                 StartCoroutine(ResetHoldTimeAfterDelay(3f)); // Start coroutine to reset hold time
 
+                // Stop the spray sound
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                    audioSource.loop = false; // Disable looping
+                }
+
                 // Stop the spray effect if it's active
                 if (activeSprayEffect != null)
                 {
@@ -123,5 +138,4 @@ public class SprayItem : MonoBehaviour
     }
 
 
-   
 }

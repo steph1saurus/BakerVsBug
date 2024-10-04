@@ -173,6 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
+  audioSource: {fileID: 8008976784899583323}
+  swatterSound: {fileID: 8300000, guid: 299aec3d83c3643e5afb977c57ce93e2, type: 3}
 --- !u!82 &8008976784899583323
 AudioSource:
   m_ObjectHideFlags: 0

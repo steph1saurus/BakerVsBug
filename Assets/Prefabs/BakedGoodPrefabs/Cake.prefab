@@ -54,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1553523805
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1691810368140077518, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -74,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4043012161839032510, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4043012161839032510, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1553523805
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4450250072053070511, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_AnchorMax.x

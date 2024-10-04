@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cookie
       objectReference: {fileID: 0}
+    - target: {fileID: 6776510605812496648, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7077609565852455313, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: reduceLifeClip
       value: 

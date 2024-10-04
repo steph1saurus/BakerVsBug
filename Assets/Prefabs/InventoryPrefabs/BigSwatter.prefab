@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: ID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -8100392007303550257, guid: 3b48198061aca45a9b16f6863d8bc215, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 4476642771506246288}
+    - target: {fileID: -8100392007303550257, guid: 3b48198061aca45a9b16f6863d8bc215, type: 3}
+      propertyPath: swatterSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 299aec3d83c3643e5afb977c57ce93e2, type: 3}
     - target: {fileID: 1566787716007951167, guid: 3b48198061aca45a9b16f6863d8bc215, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -113,3 +121,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b48198061aca45a9b16f6863d8bc215, type: 3}
+--- !u!82 &4476642771506246288 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8008976784899583323, guid: 3b48198061aca45a9b16f6863d8bc215, type: 3}
+  m_PrefabInstance: {fileID: 5838251790528225227}
+  m_PrefabAsset: {fileID: 0}

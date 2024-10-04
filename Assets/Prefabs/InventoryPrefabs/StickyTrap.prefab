@@ -148,6 +148,8 @@ MonoBehaviour:
   ID: 1
   maxStuckEnemies: 3
   destroyDelay: 3
+  audioSource: {fileID: 8149639795173445849}
+  stickySound: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
 --- !u!50 &-5209351820501145990
 Rigidbody2D:
   serializedVersion: 4

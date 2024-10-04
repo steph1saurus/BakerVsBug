@@ -16,6 +16,12 @@ public class StickyItem : MonoBehaviour
     // Time in seconds before stuck enemies are destroyed
     public float destroyDelay = 3f;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip stickySound;
+
+    private Coroutine soundCoroutine; // Coroutine reference for sound playback
+
     void Start()
     {
         levelEditorManager = GameObject.FindGameObjectWithTag("LevelEditorManager").GetComponent<LevelEditorManager>();
@@ -57,6 +63,12 @@ public class StickyItem : MonoBehaviour
 
                     // Start coroutine to destroy the enemy after a delay
                     StartCoroutine(DestroyEnemyAfterDelay(enemyHealth));
+
+                    // Start playing the sticky sound in a loop
+                    if (soundCoroutine == null)
+                    {
+                        soundCoroutine = StartCoroutine(PlayStickySound());
+                    }
                 }
             }
         }
@@ -70,6 +82,13 @@ public class StickyItem : MonoBehaviour
             if (stuckEnemies.Contains(enemyHealth))
             {
                 stuckEnemies.Remove(enemyHealth); // Remove enemy from the list if they exit the sticky trap
+
+                // Stop playing sound if no enemies are left
+                if (stuckEnemies.Count == 0 && soundCoroutine != null)
+                {
+                    StopCoroutine(soundCoroutine);
+                    soundCoroutine = null; // Reset the reference
+                }
             }
         }
     }
@@ -85,5 +104,19 @@ public class StickyItem : MonoBehaviour
             stuckEnemies.Remove(enemyHealth);
             Destroy(enemyHealth.gameObject);
         }
+    }
+
+    // Coroutine to play sticky sound every second while enemies are stuck
+    private IEnumerator PlayStickySound()
+    {
+        while (stuckEnemies.Count > 0)
+        {
+            if (audioSource != null && stickySound != null)
+            {
+                audioSource.PlayOneShot(stickySound);
+            }
+            yield return new WaitForSeconds(1f); // Wait for 1 second before playing the sound again
+        }
+        soundCoroutine = null; // Reset the reference when finished
     }
 }
