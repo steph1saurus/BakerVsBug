@@ -164,7 +164,8 @@ MonoBehaviour:
   touchingBakedGood: 0
   touchingStickyTrap: 0
   audioSource: {fileID: 4829606355544915971}
-  eatingSound: {fileID: 8300000, guid: f855f96bfc01a41beb5b03bceae9b9de, type: 3}
+  eatingSound: {fileID: 0}
+  soundMixerManager: {fileID: 0}
 --- !u!82 &4829606355544915971
 AudioSource:
   m_ObjectHideFlags: 0

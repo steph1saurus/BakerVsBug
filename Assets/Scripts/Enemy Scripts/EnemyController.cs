@@ -16,12 +16,16 @@ public class EnemyController : MonoBehaviour
     private Coroutine damageCoroutine;
 
     [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip eatingSound;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip eatingSound;
+
+    [SerializeField] SoundMixerManager soundMixerManager;
 
     private void Start()
     {
         initialSpeed = speed;
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        eatingSound = soundMixerManager.eatSound;
     }
 
     // Update is called once per frame

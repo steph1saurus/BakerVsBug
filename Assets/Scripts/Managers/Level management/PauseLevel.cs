@@ -7,24 +7,24 @@ public class PauseLevel : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip pauseSound;
 
-    [SerializeField] GameManager gameManager;
+    [SerializeField] SoundMixerManager soundMixerManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+
     }
 
-   public void PressPauseButton()
+    public void PressPauseButton()
 
     { 
-        gameManager.TimePaused();
+        soundMixerManager.TimePaused();
     }
 
     public void BackToLevelButton()
     {
-        gameManager.TimePaused();
+        soundMixerManager.TimePaused();
     }
 
 }

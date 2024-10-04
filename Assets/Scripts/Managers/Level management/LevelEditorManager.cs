@@ -24,14 +24,14 @@ public class LevelEditorManager : MonoBehaviour
     [SerializeField] AudioClip levelCompleteSound;
 
     [Header("GameManager")]
-    [SerializeField] GameManager gameManager;
+    [SerializeField] SoundMixerManager soundMixerManager;
 
     private void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        clickSound = gameManager.clickSound;
-        gameOverSound = gameManager.gameOverSound;
-        levelCompleteSound = gameManager.levelCompleteSound;
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        clickSound = soundMixerManager.clickSound;
+        gameOverSound = soundMixerManager.gameOverSound;
+        levelCompleteSound = soundMixerManager.levelCompleteSound;
 
     }
 
@@ -47,7 +47,7 @@ public class LevelEditorManager : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("ItemImage"));
         }
 
-        if (!gameManager.isPaused)
+        if (!soundMixerManager.isPaused)
         {
             Time.timeScale = 1f;
             LevelComplete();
@@ -63,8 +63,8 @@ public class LevelEditorManager : MonoBehaviour
     public void RestartButtonPressed()
     {
         audioSource.PlayOneShot(clickSound);
-       
-        gameManager.Restart();
+
+        soundMixerManager.Restart();
     }
 
     public void GameOver()
@@ -72,7 +72,7 @@ public class LevelEditorManager : MonoBehaviour
         gameOverScreen.SetActive(true);
         levelCompleteBool = true;
         audioSource.PlayOneShot(gameOverSound);
-        gameManager.TimePaused();
+        soundMixerManager.TimePaused();
         StartCoroutine(HandleLevelCompletion());
     }
 
@@ -83,7 +83,7 @@ public class LevelEditorManager : MonoBehaviour
             levelCompleteBool = true;
 
             audioSource.PlayOneShot(levelCompleteSound);
-            gameManager.TimePaused();
+            soundMixerManager.TimePaused();
 
             StartCoroutine(HandleLevelCompletion());
 
@@ -96,7 +96,7 @@ public class LevelEditorManager : MonoBehaviour
         // Wait for 3 seconds
         yield return new WaitForSecondsRealtime(3f);  // Realtime because Time.timeScale is set to 0
 
-        gameManager.LoadScene("RewardScene");
+        soundMixerManager.LoadScene("RewardScene");
     }
 
    
