@@ -13,7 +13,7 @@ public class ShopManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coins = PlayerPrefs.GetInt("CurrencyBalance", 0);
+        //coins = PlayerPrefs.GetInt("CurrencyBalance", 0);
 
         coinsTxt.text = "Wallet: " + coins.ToString();
 
@@ -55,9 +55,9 @@ public class ShopManagerScript : MonoBehaviour
             buttonRef.GetComponent<ButtonInfo>().quantityText.text = shopItems[2, buttonRef.GetComponent<ButtonInfo>().itemID].ToString();
 
 
-            // Save the updated coins value back to PlayerPrefs
-            PlayerPrefs.SetInt("CurrencyBalance", coins);
-            PlayerPrefs.Save(); // Make sure to save the changes
+            //// Save the updated coins value back to PlayerPrefs
+            //PlayerPrefs.SetInt("CurrencyBalance", coins);
+            //PlayerPrefs.Save(); // Make sure to save the changes
         }
 
     }

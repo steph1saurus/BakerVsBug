@@ -12,6 +12,7 @@ TagManager:
   - ItemImage
   - SwatterOrSpray
   - Sticky
+  - GameManager
   layers:
   - Default
   - TransparentFX
