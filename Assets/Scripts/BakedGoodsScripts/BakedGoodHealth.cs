@@ -5,7 +5,7 @@ public class BakedGoodHealth : MonoBehaviour
 {
     [Header("Max health points")]
     public float initialLifePoints = 20f;
-    public float currentLifepoints;
+    public float currentLifePoints;
 
     [Header("Payout amount")]
     public int levelPayout;
@@ -23,8 +23,8 @@ public class BakedGoodHealth : MonoBehaviour
 
     private void Start()
     {
-        currentLifepoints = initialLifePoints;
-        healthBar.UpdateHealthBar(currentLifepoints);
+        currentLifePoints = initialLifePoints;
+        healthBar.UpdateHealthBar(currentLifePoints);
 
     }
 
@@ -32,11 +32,11 @@ public class BakedGoodHealth : MonoBehaviour
     public void ReduceLife()
     {
         isTakingDamage = true;
-        currentLifepoints -= 0.5f;
-        healthBar.UpdateHealthBar(currentLifepoints);
+        currentLifePoints -= 0.5f;
+        healthBar.UpdateHealthBar(currentLifePoints);
 
         //destroy baked good when lifepoints = 0
-        if (currentLifepoints <= 0)
+        if (currentLifePoints <= 0)
         {
             Destroy(gameObject);
             Debug.Log("Baked good destroyed");

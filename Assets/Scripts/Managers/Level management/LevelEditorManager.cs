@@ -27,13 +27,16 @@ public class LevelEditorManager : MonoBehaviour
 
     [Header("GameManager")]
     [SerializeField] SoundMixerManager soundMixerManager;
+    [SerializeField] BakedGoodPayoutManager bakedGoodPayoutManager;
 
     private void Start()
     {
         soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        bakedGoodPayoutManager = GameObject.FindGameObjectWithTag("BakedGoodsManager").GetComponent<BakedGoodPayoutManager>();
         clickSound = soundMixerManager.clickSound;
         gameOverSound = soundMixerManager.gameOverSound;
         levelCompleteSound = soundMixerManager.levelCompleteSound;
+        soundMixerManager.isPaused = false;
 
     }
 
@@ -82,6 +85,7 @@ public class LevelEditorManager : MonoBehaviour
     {
         if (progressBar.value == 1 && !levelCompleteBool)
         {
+            bakedGoodPayoutManager.CompleteLevelWithPayout();
             levelCompleteBool = true;
             completeScreen.SetActive(true);
             audioSource.PlayOneShot(levelCompleteSound);

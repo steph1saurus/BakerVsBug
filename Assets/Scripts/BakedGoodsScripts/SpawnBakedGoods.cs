@@ -10,6 +10,8 @@ public class SpawnBakedGoods : MonoBehaviour
     private Vector3 spawnPosition;
     private Camera mainCamera;
 
+    public float maxYSpawnHeight = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +64,7 @@ public class SpawnBakedGoods : MonoBehaviour
 
         // Generate a random position within the screen bounds
         float randomX = Random.Range(screenBottomLeft.x, screenTopRight.x);
-        float randomY = Random.Range(screenBottomLeft.y, screenTopRight.y);
+        float randomY = Random.Range(screenBottomLeft.y, Mathf.Min(screenTopRight.y, maxYSpawnHeight)); // Limit the y position
 
         return new Vector3(randomX, randomY, 0); // Set Z to 0 for 2D
     }

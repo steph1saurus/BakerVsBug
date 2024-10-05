@@ -4,66 +4,82 @@ using TMPro;
 
 public class ShopManagerScript : MonoBehaviour
 {
-    public int[,] shopItems = new int[5,5];
-    public int coins;//link to currency system?
+    public int[,] shopItems = new int[5, 7]; // Changed array size to accommodate 6 items
+    public int coins; // Player's currency
 
     public TextMeshProUGUI coinsTxt;
-  
 
     // Start is called before the first frame update
     void Start()
     {
-        //coins = PlayerPrefs.GetInt("CurrencyBalance", 0);
-
+        // Retrieve the player's current coins from PlayerPrefs
+        coins = PlayerPrefs.GetInt("CurrencyBalance", 0);
         coinsTxt.text = "Wallet: " + coins.ToString();
 
-        //shop item array
-        shopItems[1, 1] = 1;//swatter
-        shopItems[1, 2] = 2;//sticky
-        shopItems[1, 3] = 3;//sugar
-        shopItems[1, 4] = 4;//big swatter
-        shopItems[1, 5] = 5;//bomb
-        shopItems[1, 6] = 6;//spray
+        // Initialize shop items array
+        shopItems[1, 1] = 0; // swatter
+        shopItems[1, 2] = 1; // sticky
+        shopItems[1, 3] = 2; // sugar
+        shopItems[1, 4] = 3; // big swatter
+        shopItems[1, 5] = 4; // bomb
+        shopItems[1, 6] = 5; // spray
 
+        // Prices
+        shopItems[2, 0] = 0;
+        shopItems[2, 1] = 50;
+        shopItems[2, 2] = 30;
+        shopItems[2, 3] = 0;
+        shopItems[2, 4] = 50;
+        shopItems[2, 5] = 100;
 
-        //price
-        shopItems[2, 1] = 0;
-        shopItems[2, 2] = 50;
-        shopItems[2, 3] = 30;
-        shopItems[2, 4] = 0;
-        shopItems[2, 5] = 50;
-        shopItems[2, 6] = 100;
-
-
-        //quantity
-        shopItems[3, 1] = 0;
+        // Quantity
+        shopItems[3, 0] = 0;
+        shopItems[3, 1] = 2;
         shopItems[3, 2] = 2;
-        shopItems[3, 3] = 2;
-        shopItems[3, 4] = 0;
+        shopItems[3, 3] = 0;
+        shopItems[3, 4] = 1;
         shopItems[3, 5] = 1;
-        shopItems[3, 6] = 1;
     }
-    
 
     public void Buy()
     {
         GameObject buttonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
 
-        //check if have enough coins
-        if(coins >=shopItems[2,buttonRef.GetComponent<ButtonInfo>().itemID])
+        // Check if the player has enough coins
+        int itemID = buttonRef.GetComponent<ButtonInfo>().itemID;
+        int itemPrice = shopItems[2, itemID];
+
+        if (coins >= itemPrice)
         {
-            coins -= shopItems[2, buttonRef.GetComponent<ButtonInfo>().itemID]; //subtract shopItem price from coins
+            // Subtract the item price from the player's coins
+            coins -= itemPrice;
 
-            shopItems[3, buttonRef.GetComponent<ButtonInfo>().itemID] ++; //update quantity
+            // Retrieve the current quantity from PlayerPrefs for this item
+            int currentQuantity = PlayerPrefs.GetInt($"Inventory_{itemID}", 0);
 
+            // Update the shopItems array with the new quantity (adding the current quantity)
+            shopItems[3, itemID] = currentQuantity + 1;
+
+            // Update wallet display
             coinsTxt.text = "Wallet: " + coins.ToString();
-            buttonRef.GetComponent<ButtonInfo>().quantityText.text = shopItems[2, buttonRef.GetComponent<ButtonInfo>().itemID].ToString();
+            buttonRef.GetComponent<ButtonInfo>().quantityText.text = shopItems[3, itemID].ToString(); // Update item quantity text
 
-
-            // Save the updated coins value back to PlayerPrefs
+            // Save the updated coins value to PlayerPrefs
             PlayerPrefs.SetInt("CurrencyBalance", coins);
-            PlayerPrefs.Save(); // Make sure to save the changes
-        }
 
+            // Save the updated quantity to PlayerPrefs
+            PlayerPrefs.SetInt($"Inventory_{itemID}", shopItems[3, itemID]);
+
+            // Save the changes to PlayerPrefs
+            PlayerPrefs.Save();
+
+            Debug.Log($"Bought item {itemID} for {itemPrice} coins. New balance: {coins}, New quantity: {shopItems[3, itemID]}");
+        }
+        else
+        {
+            Debug.Log("Not enough coins to purchase the item.");
+        }
     }
+
+
 }
