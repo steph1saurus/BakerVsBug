@@ -1101,6 +1101,7 @@ MonoBehaviour:
   explosionSound: {fileID: 8300000, guid: 3990e38a5afde4b438f5ea03d63a8be3, type: 3}
   stickySound: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
   spraySound: {fileID: 8300000, guid: 4cf624f1db73a4976a23f294489d359d, type: 3}
+  coinSound: {fileID: 8300000, guid: abdbbfd33a46f4549987385f85c536b5, type: 3}
 --- !u!4 &310360863
 Transform:
   m_ObjectHideFlags: 0

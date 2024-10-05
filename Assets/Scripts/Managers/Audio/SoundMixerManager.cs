@@ -49,6 +49,7 @@ public class SoundMixerManager : MonoBehaviour
     public AudioClip explosionSound;
     public AudioClip stickySound;
     public AudioClip spraySound;
+    public AudioClip coinSound;
 
 
     [Header("CurrentScene")]
