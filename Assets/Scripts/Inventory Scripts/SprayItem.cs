@@ -86,7 +86,7 @@ public class SprayItem : MonoBehaviour
             }
 
             // Destroy the spray item if held for more than 5 seconds
-            if (holdTime >= 5f)
+            if (holdTime >= 10f)
             {
                 DestroySprayItem();
             }
@@ -119,7 +119,13 @@ public class SprayItem : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             // Destroy the spray item and increase quantity
-            DestroySprayItem();
+            Destroy(activeSprayEffect);
+            // Destroy the spray item
+            Destroy(gameObject);
+
+            // Increase quantity in the LevelEditorManager
+            levelEditorManager.itemButtons[ID].quantity++;
+            levelEditorManager.itemButtons[ID].quantityTxt.text = levelEditorManager.itemButtons[ID].quantity.ToString();
         }
     }
 
@@ -129,9 +135,6 @@ public class SprayItem : MonoBehaviour
         // Destroy the spray item
         Destroy(gameObject);
 
-        // Increase quantity in the LevelEditorManager
-        levelEditorManager.itemButtons[ID].quantity++;
-        levelEditorManager.itemButtons[ID].quantityTxt.text = levelEditorManager.itemButtons[ID].quantity.ToString();
     }
 
     private IEnumerator ResetHoldTimeAfterDelay(float delay)

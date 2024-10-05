@@ -52,6 +52,8 @@ public class SoundMixerManager : MonoBehaviour
     public AudioClip coinSound;
 
 
+
+
     [Header("CurrentScene")]
     private string currentScene;
 
@@ -72,53 +74,52 @@ public class SoundMixerManager : MonoBehaviour
         }
         else Destroy(gameObject);
 
-
-
     }
 
     private void Start()
     {
-        
 
-        float savedMainVolume = PlayerPrefs.GetFloat(MainVolumeKey, 1.0f);
-        mainSlider.value = savedMainVolume;
-        SetMainVolume(savedMainVolume);
+        //---------------//
+        //float savedMainVolume = PlayerPrefs.GetFloat(MainVolumeKey, 1.0f);
+        //mainSlider.value = savedMainVolume;
+        //SetMainVolume(savedMainVolume);
 
-        float savedMusicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 1.0f);
-        musicSlider.value = savedMusicVolume;
-        SetMusicVolume(savedMusicVolume);
+        //float savedMusicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 1.0f);
+        //musicSlider.value = savedMusicVolume;
+        //SetMusicVolume(savedMusicVolume);
 
-        float savedSFXVolume = PlayerPrefs.GetFloat(SFXVolumeKey, 1.0f);
-        SFXSlider.value = savedSFXVolume;
-        SetSFXVolume(savedSFXVolume);
+        //float savedSFXVolume = PlayerPrefs.GetFloat(SFXVolumeKey, 1.0f);
+        //SFXSlider.value = savedSFXVolume;
+        //SetSFXVolume(savedSFXVolume);
+        //--------------//
     }
+    //----Saving Volume Options between scenes not working----//
+    //public void SetMainVolume(float level)
+    //{
+    //    float volume = Mathf.Log10(level) * 20;
+    //    audioMixer.SetFloat("MasterVol", volume);
+    //    PlayerPrefs.SetFloat(MainVolumeKey, level);
+    //    PlayerPrefs.Save();
+    //}
 
-    public void SetMainVolume(float level)
-    {
-        float volume = Mathf.Log10(level) * 20;
-        audioMixer.SetFloat("MasterVol", volume);
-        PlayerPrefs.SetFloat(MainVolumeKey, level);
-        PlayerPrefs.Save();
-    }
+    //public void SetMusicVolume(float level)
+    //{
+    //    float volume = Mathf.Log10(level) * 20;
+    //    audioMixer.SetFloat("Music", volume);
+    //    PlayerPrefs.SetFloat(MusicVolumeKey, level);
+    //    PlayerPrefs.Save();
 
-    public void SetMusicVolume(float level)
-    {
-        float volume = Mathf.Log10(level) * 20;
-        audioMixer.SetFloat("Music", volume);
-        PlayerPrefs.SetFloat(MusicVolumeKey, level);
-        PlayerPrefs.Save();
+    //}
 
-    }
+    //public void SetSFXVolume(float level)
+    //{
+    //    float volume = Mathf.Log10(level) * 20;
+    //    audioMixer.SetFloat("SoundFX", volume);
+    //    PlayerPrefs.SetFloat(SFXVolumeKey, level);
+    //    PlayerPrefs.Save();
 
-    public void SetSFXVolume(float level)
-    {
-        float volume = Mathf.Log10(level) * 20;
-        audioMixer.SetFloat("SoundFX", volume);
-        PlayerPrefs.SetFloat(SFXVolumeKey, level);
-        PlayerPrefs.Save();
-
-    }
-
+    //}
+    //---------------------------------------------------------//
     void OnEnable()
     {
         // Subscribe to scene load event
@@ -186,10 +187,6 @@ public class SoundMixerManager : MonoBehaviour
         LoadScene("TitleScene");
     }
 
-    public void OnApplicationQuit()
-    {
-
-    }
 
     public void QuitApplication()
     {
@@ -218,8 +215,5 @@ public class SoundMixerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
     }
-
-
-
 
 }

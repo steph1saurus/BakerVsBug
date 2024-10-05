@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d8e5d700da04b859d04c19c572f74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoints: 0
+  lifePoints: 4
 --- !u!212 &4288495980319979326
 SpriteRenderer:
   m_ObjectHideFlags: 0
