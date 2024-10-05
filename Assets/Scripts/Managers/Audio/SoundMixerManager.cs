@@ -77,6 +77,8 @@ public class SoundMixerManager : MonoBehaviour
 
     private void Start()
     {
+        
+
         float savedMainVolume = PlayerPrefs.GetFloat(MainVolumeKey, 1.0f);
         mainSlider.value = savedMainVolume;
         SetMainVolume(savedMainVolume);
@@ -159,21 +161,22 @@ public class SoundMixerManager : MonoBehaviour
     {
         if (audioSource.clip != sceneMusic)
         {
-            audioSource.clip = sceneMusic;
-            audioSource.Play();
+                audioSource.clip = sceneMusic;
+
+                audioSource.Play();
         }
     }
 
     public void LoadScene(string scene)
     {
-        WaitToLoadScene();
+        StartCoroutine(WaitToLoadScene());
         SceneManager.LoadScene(scene);
     }
 
 
     public void Restart()
     {
-        WaitToLoadScene();
+        StartCoroutine(WaitToLoadScene());
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -196,6 +199,7 @@ public class SoundMixerManager : MonoBehaviour
     {
         if (!isPaused)
         {
+            audioSource.Pause();
             isPaused = true;
             Time.timeScale = 0f;
             Debug.Log(Time.timeScale);
@@ -204,13 +208,14 @@ public class SoundMixerManager : MonoBehaviour
         {
             isPaused = false;
             Time.timeScale = 1f;
+            audioSource.UnPause();
         }
 
     }
 
     public IEnumerator WaitToLoadScene()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSeconds(1f);
     }
 
 

@@ -13,6 +13,9 @@ TagManager:
   - SwatterOrSpray
   - Sticky
   - GameManager
+  - MainVolControl
+  - MusicVolControl
+  - SFXVolControl
   layers:
   - Default
   - TransparentFX

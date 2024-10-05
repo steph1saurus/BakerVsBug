@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 100138113}
   m_Layer: 5
   m_Name: Music vol control
-  m_TagString: Untagged
+  m_TagString: MusicVolControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1010,7 +1010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.2077026, y: 0.14459991}
+  m_AnchoredPosition: {x: 1.2077026, y: 0.14460754}
   m_SizeDelta: {x: 17.5848, y: -23.4162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &286170975
@@ -2224,7 +2224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.2077026, y: 0.14459991}
+  m_AnchoredPosition: {x: 1.2077026, y: 0.14460754}
   m_SizeDelta: {x: 17.5848, y: -23.4162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638153488
@@ -3699,7 +3699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.2077026, y: 0.14459991}
+  m_AnchoredPosition: {x: 1.2077026, y: 0.14460754}
   m_SizeDelta: {x: 17.5848, y: -23.4162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1278643348
@@ -4418,7 +4418,7 @@ GameObject:
   - component: {fileID: 1696130899}
   m_Layer: 5
   m_Name: Main vol control
-  m_TagString: Untagged
+  m_TagString: MainVolControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5078,7 +5078,7 @@ GameObject:
   - component: {fileID: 1926801630}
   m_Layer: 5
   m_Name: SFX vol control
-  m_TagString: Untagged
+  m_TagString: SFXVolControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5168,18 +5168,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 310360864}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayDelayed
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!82 &1926801630
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5190,7 +5178,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3303005459622470506, guid: 44a963ecdb72c4365befe40c79db06f3, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

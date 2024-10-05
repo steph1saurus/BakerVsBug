@@ -6,6 +6,7 @@ public class StickyItem : MonoBehaviour
 {
     public int ID;
     private LevelEditorManager levelEditorManager;
+    [SerializeField] SoundMixerManager soundMixerManager;
 
     // Store enemies that are inside the sticky trap
     private List<EnemyHealth> stuckEnemies = new List<EnemyHealth>();
@@ -25,6 +26,8 @@ public class StickyItem : MonoBehaviour
     void Start()
     {
         levelEditorManager = GameObject.FindGameObjectWithTag("LevelEditorManager").GetComponent<LevelEditorManager>();
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        stickySound = soundMixerManager.stickySound;
     }
 
     private void OnMouseOver()

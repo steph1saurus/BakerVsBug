@@ -16,12 +16,14 @@ public class LevelEditorManager : MonoBehaviour
     public Slider progressBar;
     public bool levelCompleteBool = false;
     public GameObject gameOverScreen;
+    public GameObject completeScreen;
 
     [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip clickSound;
     [SerializeField] AudioClip gameOverSound;
     [SerializeField] AudioClip levelCompleteSound;
+    [SerializeField] AudioSource musicAudioSource;
 
     [Header("GameManager")]
     [SerializeField] SoundMixerManager soundMixerManager;
@@ -81,7 +83,7 @@ public class LevelEditorManager : MonoBehaviour
         if (progressBar.value == 1 && !levelCompleteBool)
         {
             levelCompleteBool = true;
-
+            completeScreen.SetActive(true);
             audioSource.PlayOneShot(levelCompleteSound);
             soundMixerManager.TimePaused();
 
