@@ -86,7 +86,7 @@ public class SprayItem : MonoBehaviour
             }
 
             // Destroy the spray item if held for more than 5 seconds
-            if (holdTime >= 10f)
+            if (holdTime >= 5f)
             {
                 DestroySprayItem();
             }
