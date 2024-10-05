@@ -6,16 +6,17 @@ public class ButtonPressed : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip clickSound;
 
-    [SerializeField] GameManager gameManager;
+    [SerializeField] SoundMixerManager soundMixerManager;
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        clickSound = gameManager.clickSound;
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        clickSound = soundMixerManager.clickSound;
     }
 
     public void OnButtonPressed()
     {
+        //clickSound = GameManager.GMinstance.clickSound;
         audioSource.PlayOneShot(clickSound);
     }
 }

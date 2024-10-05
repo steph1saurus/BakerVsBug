@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 
 
 
-public class GameManager : MonoBehaviour
+public class GameManager: MonoBehaviour
 {
-   
-
+    public static GameManager GMinstance;
     [Header("Checks")]
     public bool levelCompleteBool = false;
     public bool isPaused = false;
@@ -19,18 +18,16 @@ public class GameManager : MonoBehaviour
     public AudioClip pauseSound;
     public AudioClip gameOverSound;
     public AudioClip levelCompleteSound;
-    
 
-    public static GameManager instance;
 
     private void Awake()
     {
-        if (instance == null)
+        if (GMinstance == null)
         {
-            instance = this;
+            GMinstance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        else
-            Destroy(gameObject);
+        else Destroy(gameObject);
     }
 
 
@@ -80,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator WaitToLoadScene()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(1f);
     }
 
 }

@@ -10,10 +10,13 @@ public class BombItem : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip explosionSound;
 
+    [SerializeField] SoundMixerManager soundMixerManager;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        explosionSound = soundMixerManager.explosionSound;
         StartCoroutine(CountDownToExplode());
         
     }

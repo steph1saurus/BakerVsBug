@@ -8,6 +8,7 @@ public class SprayItem : MonoBehaviour
     public int ID;
     public GameObject sprayEffectPrefab; // Assign your particle effect prefab in the Inspector
     private LevelEditorManager levelEditorManager;
+    [SerializeField] SoundMixerManager soundMixerManager;
 
     [Header("Spray effect")]
     private float holdTime = 0f; // Time the button is held down
@@ -23,6 +24,8 @@ public class SprayItem : MonoBehaviour
     void Start()
     {
         levelEditorManager = GameObject.FindGameObjectWithTag("LevelEditorManager").GetComponent<LevelEditorManager>();
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        spraySound = soundMixerManager.spraySound;
     }
 
     // Update is called once per frame

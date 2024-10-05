@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwatterItem : MonoBehaviour
 {
     public int ID;
+    private SoundMixerManager soundMixerManager;
     private LevelEditorManager levelEditorManager;
 
     [Header("Audio")]
@@ -14,7 +15,10 @@ public class SwatterItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
         levelEditorManager = GameObject.FindGameObjectWithTag("LevelEditorManager").GetComponent<LevelEditorManager>();
+
+        swatterSound = soundMixerManager.swatterSound;
     }
 
     // Update is called once per frame

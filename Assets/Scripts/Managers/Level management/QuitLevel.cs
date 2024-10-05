@@ -5,18 +5,18 @@ using UnityEngine;
 public class QuitLevel : MonoBehaviour
 {
 
-    [SerializeField] GameManager gameManager;
+    [SerializeField] SoundMixerManager soundMixerManager;
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-  
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+
     }
 
-   public void PressQuitLevelButton()
+    public void PressQuitLevelButton()
    {
         
-        gameManager.LoadScene("TitleScene");
+        soundMixerManager.LoadScene("TitleScene");
    }
 
     

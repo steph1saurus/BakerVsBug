@@ -3,28 +3,33 @@ using UnityEngine;
 
 public class PauseLevel : MonoBehaviour
 {
-
+    [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip pauseSound;
+    [SerializeField] SoundMixerManager soundMixerManager;
 
-    [SerializeField] GameManager gameManager;
+    [Header("Pause panel")]
+    [SerializeField] GameObject pausePanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        pauseSound = soundMixerManager.pauseSound;
     }
 
-   public void PressPauseButton()
+    public void PressPauseButton()
 
-    { 
-        gameManager.TimePaused();
+    {
+        pausePanel.SetActive(true);
+        audioSource.PlayOneShot(pauseSound);
+        soundMixerManager.TimePaused();
     }
 
     public void BackToLevelButton()
     {
-        gameManager.TimePaused();
+        pausePanel.SetActive(false);
+        soundMixerManager.TimePaused();
     }
 
 }
