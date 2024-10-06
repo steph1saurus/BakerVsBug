@@ -83,21 +83,23 @@ public class LevelEditorManager : MonoBehaviour
 
     public void LevelComplete()
     {
+ 
         if (progressBar.value == 1 && !levelCompleteBool)
         {
-            bakedGoodPayoutManager.CompleteLevelWithPayout();
             levelCompleteBool = true;
             completeScreen.SetActive(true);
             audioSource.PlayOneShot(levelCompleteSound);
             soundMixerManager.TimePaused();
+            bakedGoodPayoutManager.CompleteLevelWithPayout();
 
             StartCoroutine(HandleLevelCompletion());
-
         }
     }
 
+
     private IEnumerator HandleLevelCompletion()
     {
+       
 
         // Wait for 3 seconds
         yield return new WaitForSecondsRealtime(3f);  // Realtime because Time.timeScale is set to 0
@@ -105,7 +107,7 @@ public class LevelEditorManager : MonoBehaviour
         soundMixerManager.LoadScene("RewardScene");
     }
 
-   
+
 }
 
 

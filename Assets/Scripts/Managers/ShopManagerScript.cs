@@ -13,7 +13,7 @@ public class ShopManagerScript : MonoBehaviour
     void Start()
     {
         // Retrieve the player's current coins from PlayerPrefs
-        coins = PlayerPrefs.GetInt("CurrencyBalance", 0);
+        coins = PlayerPrefs.GetInt("CurrencyBalance");
         coinsTxt.text = "Wallet: " + coins.ToString();
 
         // Initialize shop items array
@@ -25,18 +25,18 @@ public class ShopManagerScript : MonoBehaviour
         shopItems[1, 6] = 5; // spray
 
         // Prices
-        shopItems[2, 0] = 0;
+        shopItems[2, 0] = 5;
         shopItems[2, 1] = 50;
         shopItems[2, 2] = 30;
-        shopItems[2, 3] = 0;
+        shopItems[2, 3] = 10;
         shopItems[2, 4] = 50;
         shopItems[2, 5] = 100;
 
         // Quantity
-        shopItems[3, 0] = 0;
+        shopItems[3, 0] = 1;
         shopItems[3, 1] = 2;
         shopItems[3, 2] = 2;
-        shopItems[3, 3] = 0;
+        shopItems[3, 3] = 1;
         shopItems[3, 4] = 1;
         shopItems[3, 5] = 1;
     }
@@ -55,7 +55,7 @@ public class ShopManagerScript : MonoBehaviour
             coins -= itemPrice;
 
             // Retrieve the current quantity from PlayerPrefs for this item
-            int currentQuantity = PlayerPrefs.GetInt($"Inventory_{itemID}", 0);
+            int currentQuantity = PlayerPrefs.GetInt($"Inventory_{itemID}");
 
             // Update the shopItems array with the new quantity (adding the current quantity)
             shopItems[3, itemID] = currentQuantity + 1;

@@ -156,9 +156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1808915bcf1804b688b011fca7b07087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 4
   explosionEffect: {fileID: 2252894240018910747, guid: 15bcf5be6a8684d1ba4b370ce28c8344, type: 3}
   audioSource: {fileID: 7823006047495694923}
   explosionSound: {fileID: 0}
+  soundMixerManager: {fileID: 0}
 --- !u!82 &7823006047495694923
 AudioSource:
   m_ObjectHideFlags: 0

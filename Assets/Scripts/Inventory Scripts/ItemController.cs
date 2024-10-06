@@ -17,7 +17,7 @@ public class ItemController : MonoBehaviour
     void Start()
     {
         // Retrieve the quantity from PlayerPrefs and set it
-        quantity = PlayerPrefs.GetInt($"Inventory_{ID}", 0);
+        quantity = PlayerPrefs.GetInt($"Inventory_{ID}");
         quantityTxt.text = quantity.ToString();
 
         levelEditorManager = GameObject.FindGameObjectWithTag("LevelEditorManager").GetComponent<LevelEditorManager>();

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SugarItem : MonoBehaviour
 {
+    public int ID;
     // Start is called before the first frame update
     void Start()
     {

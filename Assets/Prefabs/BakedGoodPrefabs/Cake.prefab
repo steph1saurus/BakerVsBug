@@ -161,12 +161,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7077609565852455313, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
+      propertyPath: levelPayout
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077609565852455313, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: reduceLifeClip
       value: 
       objectReference: {fileID: 8300000, guid: f855f96bfc01a41beb5b03bceae9b9de, type: 3}
     - target: {fileID: 7077609565852455313, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: initialLifePoints
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7265110007225180534, guid: dd52efed2e3994e8caf5cc8d7589b99d, type: 3}
       propertyPath: m_Value

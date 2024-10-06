@@ -4,7 +4,7 @@ public class PlayerInitializationScript : MonoBehaviour
 {
     private void Start()
     {
-     
+        
 
         InitializePlayerData();
     }

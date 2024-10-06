@@ -47,7 +47,7 @@ public class BakedGoodPayoutManager : MonoBehaviour
         }
 
         // Update the player's currency balance with total payout
-        int playerCurrencyBalance = PlayerPrefs.GetInt("CurrencyBalance", 100); // Retrieve balance from PlayerPrefs
+        int playerCurrencyBalance = PlayerPrefs.GetInt("CurrencyBalance"); // Retrieve balance from PlayerPrefs
         playerCurrencyBalance += totalPayout;
 
         // Save the new balance in PlayerPrefs

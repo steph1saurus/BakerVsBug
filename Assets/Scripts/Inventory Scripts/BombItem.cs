@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BombItem : MonoBehaviour
 {
+    public int ID;
+
     public GameObject explosionEffect; // Reference to the explosion effect prefab
 
     [Header("Audio")]
