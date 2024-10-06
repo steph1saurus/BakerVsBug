@@ -3,17 +3,12 @@ using System.Collections.Generic;
 
 public class BakedGoodPayoutManager : MonoBehaviour
 {
-    // No need for a public list; we will fetch the objects in the CompleteLevelWithPayout method.
+    
+    [Header("Baked good health points")]
+    [SerializeField] List<float> initialLifePoints = new List<float>();
+    [SerializeField]  List<float> currentLifePoints = new List<float>();
 
-    // Variables to store initial and current life points for each BakedGood
-    private List<float> initialLifePoints = new List<float>();
-    private List<float> currentLifePoints = new List<float>();
-
-    private void Start()
-    {
-        
-    }
-
+ 
     // Call this method when the level is completed
     public void CompleteLevelWithPayout()
     {

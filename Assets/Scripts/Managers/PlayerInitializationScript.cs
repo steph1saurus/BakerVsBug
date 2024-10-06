@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class PlayerInitializationScript : MonoBehaviour
 {
+
     private void Start()
     {
-        
-
         InitializePlayerData();
     }
 
@@ -32,7 +31,7 @@ public class PlayerInitializationScript : MonoBehaviour
     }
 
     // Method to initialize player's inventory
-    void InitializeInventory()
+    public void InitializeInventory()
     {
         int[] inventoryIDs = { 0, 1, 2, 3, 4, 5 }; // Inventory IDs
         int[] initialQuantities = { 1, 3, 2, 1, 1,1 }; // Initial quantities

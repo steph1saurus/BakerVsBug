@@ -1,34 +1,33 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed;
-    public float initialSpeed;
-    public float stoppingDistance = 0;
-    private GameObject closestBakedGood;
+    [Header("Move and check for baked goods")]
+    [SerializeField] public float speed;
+    [SerializeField] public float initialSpeed;
+    [SerializeField] public float stoppingDistance = 0;
+    [SerializeField] GameObject closestBakedGood;
 
-    public bool touchingBakedGood = false;
-    public bool touchingStickyTrap = false;
+    [Header("Check for touching items")]
+    [SerializeField] public bool touchingBakedGood = false;
+    [SerializeField] public bool touchingStickyTrap = false;
 
-    private Coroutine damageCoroutine;
 
     [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip eatingSound;
 
     [SerializeField] SoundMixerManager soundMixerManager;
+    [SerializeField] Coroutine damageCoroutine;
 
     private void Start()
     {
         initialSpeed = speed;
-        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();
+        soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>(); //reference SoundMixerManager
         eatingSound = soundMixerManager.eatSound;
     }
 
-    // Update is called once per frame
     void Update()
     {
         closestBakedGood = FindClosestObject();

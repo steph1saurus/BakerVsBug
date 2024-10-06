@@ -1,20 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BombItem : MonoBehaviour
 {
-    public int ID;
+    [Header("Item ID")]
+    [SerializeField]public int ID;
 
-    public GameObject explosionEffect; // Reference to the explosion effect prefab
+    [Header("Explosion particles")]
+    [SerializeField] public GameObject explosionEffect; // Reference to the explosion effect prefab
 
     [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip explosionSound;
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip explosionSound;
 
     [SerializeField] SoundMixerManager soundMixerManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         soundMixerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundMixerManager>();

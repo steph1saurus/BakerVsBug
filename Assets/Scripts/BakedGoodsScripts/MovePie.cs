@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class MovePie : MonoBehaviour
 {
-    private Vector3 offset;
-    private Camera mainCamera;
-    public float bakedGoodZPosition = -1f;  // Ensure BakedGood is rendered in front of enemies
+    [Header("Offset position from mouse")]
+    [SerializeField] Vector3 offset;
+
+    [Header("main camera")]
+    [SerializeField]  Camera mainCamera;
+
+    [Header("Baked good z position")]
+    [SerializeField] public float bakedGoodZPosition = -1f;// Ensure BakedGood is rendered in front of enemies
 
     void Start()
     {
@@ -17,16 +22,15 @@ public class MovePie : MonoBehaviour
 
     }
 
-    void OnMouseDown()
+    private void OnMouseDown()
     {
-     
 
         // Get the current mouse position and calculate the offset
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         offset = transform.position - new Vector3(mousePosition.x, mousePosition.y, bakedGoodZPosition);
     }
 
-    void OnMouseDrag()
+    private void OnMouseDrag()
     {
         // Get the current mouse position and update the object's position, maintaining the correct z-position
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);

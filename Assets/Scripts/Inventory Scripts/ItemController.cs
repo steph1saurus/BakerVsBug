@@ -4,15 +4,21 @@ using TMPro;
 
 public class ItemController : MonoBehaviour
 {
-    public int ID; // ID of the button
-    public int quantity; // item quantity
-    public TextMeshProUGUI quantityTxt; // quantity text
-    public bool clicked = false;
+    [Header("Item ID")]
+    [SerializeField] public int ID; // ID of the button
 
+    [Header("Item quantity")]
+    [SerializeField] public int quantity; // item quantity
+
+    [Header("Quantity text")]
+    [SerializeField] public TextMeshProUGUI quantityTxt; // quantity text
+
+    [Header("Button clicked")]
+    [SerializeField] public bool clicked = false;
     public Button button; // reference the item button in editor
 
     [Header("Level Editor Manager")]
-    private LevelEditorManager levelEditorManager;
+    [SerializeField] LevelEditorManager levelEditorManager;
 
     void Start()
     {
@@ -39,7 +45,7 @@ public class ItemController : MonoBehaviour
 
             // Update PlayerPrefs to reflect the new quantity
             PlayerPrefs.SetInt($"Inventory_{ID}", quantity);
-            PlayerPrefs.Save(); // Save the changes
+            PlayerPrefs.Save();
 
             levelEditorManager.currentButtonPressed = ID;
             Debug.Log("ButtonClicked" + ID);

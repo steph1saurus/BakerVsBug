@@ -1,20 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class SprayItem : MonoBehaviour
 {
-    public int ID;
-    public GameObject sprayEffectPrefab; // Assign your particle effect prefab in the Inspector
-    private LevelEditorManager levelEditorManager;
+    [Header("Item ID")]
+    [SerializeField] public int ID;
+
+    [Header("Managers")]
+    [SerializeField] LevelEditorManager levelEditorManager;
     [SerializeField] SoundMixerManager soundMixerManager;
 
     [Header("Spray effect")]
-    private float holdTime = 0f; // Time the button is held down
-    private bool isHolding = false; // To track if the button is being held
-    private GameObject activeSprayEffect; // To keep track of the instantiated particle effect
-    public Vector3 sprayEffectOffset = new Vector3(-2f, 0f, 0f); // Offset for the particle effect
+    [SerializeField] float holdTime = 0f; // Time the button is held down
+    [SerializeField] bool isHolding = false; // To track if the button is being held
+    [SerializeField] GameObject activeSprayEffect; // To keep track of the instantiated particle effect
+    [SerializeField] Vector3 sprayEffectOffset = new Vector3(-2f, 0f, 0f); // Offset for the particle effect
+    [SerializeField] public GameObject sprayEffectPrefab; // Assign your particle effect prefab in the Inspector
 
     [Header("Audio")]
     public AudioSource audioSource;

@@ -7,19 +7,19 @@ public class SpawnManager : MonoBehaviour
 {
     
     [Header("Game objects")]
-    public GameObject[] enemyPrefab; // Assuming enemyPrefab[0] is Ant and enemyPrefab[1] is BigAnt
+    [SerializeField] public GameObject[] enemyPrefab; // Assuming enemyPrefab[0] is Ant and enemyPrefab[1] is BigAnt
 
     [Header("Spawn wave")]
-    public int enemyCount;
-    public int waveNumber = 1;
-    public int maxEnemies;
+    [SerializeField] public int enemyCount;
+    [SerializeField] public int waveNumber = 1;
+    [SerializeField] public int maxEnemies;
     
     [Header("Spawn area")]
-    
-    public Collider2D backgroundCollider;
+
+    [SerializeField] public Collider2D backgroundCollider;
 
     [Header("Level Number")]
-    private int levelNum;
+    [SerializeField] int levelNum;
 
     private void Start()
     {

@@ -347,6 +347,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationAngle: 3
   rotationSpeed: 6
+  currentRotation: 0
+  rotatingLeft: 1
+  initialYRotation: 0
+  initialZRotation: 0
 --- !u!1 &100138112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,9 +1089,6 @@ MonoBehaviour:
   audioSource: {fileID: 310360864}
   musicMixerGroup: {fileID: -227728632433531647, guid: 44a963ecdb72c4365befe40c79db06f3, type: 2}
   musicVolumeParameter: Music
-  mainSlider: {fileID: 1696130899}
-  musicSlider: {fileID: 100138113}
-  SFXSlider: {fileID: 1926801629}
   defaultMusic: {fileID: 8300000, guid: 4620efe2af0004b5cba6736f8abaaaad, type: 3}
   sceneMusic: {fileID: 8300000, guid: 97c59839699464ec1948c274eecd2a80, type: 3}
   levelCompleteBool: 0
@@ -2369,6 +2370,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationAngle: 3
   rotationSpeed: 6
+  currentRotation: 0
+  rotatingLeft: 1
+  initialYRotation: 0
+  initialZRotation: 0
 --- !u!1 &702197851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,6 +3722,7 @@ GameObject:
   - component: {fileID: 1362617483}
   - component: {fileID: 1362617482}
   - component: {fileID: 1362617485}
+  - component: {fileID: 1362617486}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -3800,6 +3806,18 @@ MonoBehaviour:
           m_StringArgument: CreditsScene
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1362617486}
+        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
+        m_MethodName: QuitGameButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1362617483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3848,6 +3866,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8453734d07774ede95da3b5de19ee0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundMixerManager: {fileID: 0}
+--- !u!114 &1362617486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362617480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69ea03f7bb5042d6bead49b400c92a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   soundMixerManager: {fileID: 0}
@@ -4281,6 +4312,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationAngle: 3
   rotationSpeed: 6
+  currentRotation: 0
+  rotatingLeft: 1
+  initialYRotation: 0
+  initialZRotation: 0
 --- !u!1 &1625714452
 GameObject:
   m_ObjectHideFlags: 0
@@ -5689,6 +5724,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationAngle: 3
   rotationSpeed: 6
+  currentRotation: 0
+  rotatingLeft: 1
+  initialYRotation: 0
+  initialZRotation: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

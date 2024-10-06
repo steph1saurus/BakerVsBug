@@ -1,13 +1,9 @@
-
 using UnityEngine;
 
+
+//----Used for moving prefabImages with the mouse----//
 public class FollowScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

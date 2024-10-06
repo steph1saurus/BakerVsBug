@@ -1,21 +1,18 @@
-using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
 public class ButtonInfo : MonoBehaviour
 {
+    [Header("Item ID")]
+    [SerializeField] public int itemID;
 
-    public int itemID;
-    public TextMeshProUGUI priceText;
-    public TextMeshProUGUI quantityText;
-    public GameObject shopManager;
+    [Header("Price")]
+    [SerializeField] public TextMeshProUGUI priceText;
+    [Header("Quantity")]
+    [SerializeField] public TextMeshProUGUI quantityText;
 
+    [SerializeField] GameObject shopManager;
 
-    //private void Start()
-    //{
-    //    priceText.text = shopManager.GetComponent<ShopManagerScript>().shopItems[2, itemID].ToString();
-    //    quantityText.text = shopManager.GetComponent<ShopManagerScript>().shopItems[3, itemID].ToString();
-    //}
 
     private void Update()
     {

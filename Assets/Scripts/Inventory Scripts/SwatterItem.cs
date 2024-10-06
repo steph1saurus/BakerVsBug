@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwatterItem : MonoBehaviour
 {
-    public int ID;
-    private SoundMixerManager soundMixerManager;
-    private LevelEditorManager levelEditorManager;
+    [Header("Item ID")]
+    [SerializeField] public int ID;
+
+    [Header("Managers")]
+    [SerializeField] SoundMixerManager soundMixerManager;
+    [SerializeField] LevelEditorManager levelEditorManager;
 
     [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip swatterSound;
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip swatterSound;
 
     // Start is called before the first frame update
     void Start()

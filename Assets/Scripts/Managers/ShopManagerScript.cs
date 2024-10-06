@@ -4,10 +4,14 @@ using TMPro;
 
 public class ShopManagerScript : MonoBehaviour
 {
-    public int[,] shopItems = new int[5, 7]; // Changed array size to accommodate 6 items
-    public int coins; // Player's currency
+    [Header("Shop items")]
+    [SerializeField] public int[,] shopItems = new int[5, 7]; // Changed array size to accommodate 6 items
 
-    public TextMeshProUGUI coinsTxt;
+    [Header("Player currency")]
+    [SerializeField] public int coins;
+
+    [Header ("Coin text")]
+    [SerializeField] TextMeshProUGUI coinsTxt;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +28,7 @@ public class ShopManagerScript : MonoBehaviour
         shopItems[1, 5] = 4; // bomb
         shopItems[1, 6] = 5; // spray
 
-        // Prices
+        // Prices of items
         shopItems[2, 0] = 5;
         shopItems[2, 1] = 50;
         shopItems[2, 2] = 30;
@@ -32,7 +36,7 @@ public class ShopManagerScript : MonoBehaviour
         shopItems[2, 4] = 50;
         shopItems[2, 5] = 100;
 
-        // Quantity
+        // Quantity per buy
         shopItems[3, 0] = 1;
         shopItems[3, 1] = 2;
         shopItems[3, 2] = 2;

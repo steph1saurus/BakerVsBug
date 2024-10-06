@@ -1,20 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SugarItem : MonoBehaviour
 {
+    [Header("Item ID")]
     public int ID;
-    // Start is called before the first frame update
+
+    [Header("time to wait")]
+    [SerializeField] float timeToWait = 5f;
+
     void Start()
     {
         StartCoroutine(DestroySugarTrap());
         
     }
-
+    //Destroy Sugar trap after set amount of time
     private IEnumerator DestroySugarTrap()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(timeToWait);
         Destroy(gameObject);
     }
 

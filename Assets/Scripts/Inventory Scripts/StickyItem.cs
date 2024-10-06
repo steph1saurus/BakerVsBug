@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class StickyItem : MonoBehaviour
 {
-    public int ID;
-    private LevelEditorManager levelEditorManager;
+    [Header("Item ID")]
+    [SerializeField] public int ID;
+
+    [Header("Managers")]
+    [SerializeField] LevelEditorManager levelEditorManager;
     [SerializeField] SoundMixerManager soundMixerManager;
 
     // Store enemies that are inside the sticky trap
-    private List<EnemyHealth> stuckEnemies = new List<EnemyHealth>();
+    [SerializeField] List<EnemyHealth> stuckEnemies = new List<EnemyHealth>();
 
-    // Max number of enemies that can be stuck
-    public int maxStuckEnemies = 3;
+    [Header("Number of stuck enemies")]
+    [SerializeField] int maxStuckEnemies = 3;
 
-    // Time in seconds before stuck enemies are destroyed
-    public float destroyDelay = 3f;
+    [Header("Time delay")]
+    [SerializeField] float destroyDelay = 3f;
 
     [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip stickySound;
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip stickySound;
 
-    private Coroutine soundCoroutine; // Coroutine reference for sound playback
+    [SerializeField] Coroutine soundCoroutine; // Coroutine reference for sound playback
 
     void Start()
     {

@@ -1,18 +1,19 @@
 using UnityEngine;
-using System.Collections;
+
 
 public class BakedGoodHealth : MonoBehaviour
 {
     [Header("Max health points")]
-    public float initialLifePoints = 20f;
-    public float currentLifePoints;
+    [SerializeField] public float initialLifePoints = 20f;
+    [SerializeField] public float currentLifePoints;
 
     [Header("Payout amount")]
-    public int levelPayout;
+    [SerializeField] public int levelPayout;
 
+    [Header("Health bar")]
     [SerializeField] FloatingHealthBar healthBar;
 
-    public bool isTakingDamage = false; // To track if the damage coroutine is running
+    [SerializeField] public bool isTakingDamage = false; // To track if the damage coroutine is running
 
 
     private void Awake()

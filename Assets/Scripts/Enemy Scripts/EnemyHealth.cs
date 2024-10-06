@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int lifePoints;
+    [Header("Health points")]
+    [SerializeField] public int lifePoints;
 
     public void ReduceLife (int amount)
     {
