@@ -18,12 +18,16 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] public Collider2D backgroundCollider;
 
-    [Header("Level Number")]
-    [SerializeField] int levelNum;
+    //[Header("Difficulty Setting")]
+    //[SerializeField] int m_difficulty;
+
+
 
     private void Start()
     {
         SpawnEnemyWave(waveNumber + 2);
+        //m_difficulty = PlayerPrefs.GetInt("difficultyKey", 2);
+        
     }
 
 
@@ -49,7 +53,32 @@ public class SpawnManager : MonoBehaviour
     // Spawn a wave of enemies based on the wave number
     void SpawnEnemyWave(int enemiesToSpawn)
     {
-      
+        ////switch difficulty
+        //switch (m_difficulty)
+        //{
+        //    case 1:
+        //        {
+        //            foreach (GameObject enemy in enemyPrefab)
+        //            {
+                       
+
+        //            }
+        //        }
+        //        break;
+        //    case 2:
+        //        {
+
+        //        }
+        //        break;
+        //    case 3:
+        //        {
+
+        //        }
+        //        break;
+            
+        //}
+
+        //
         if (waveNumber < 4)
         {
             // Spawn only ants for wave 1
